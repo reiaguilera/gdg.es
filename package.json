@@ -1,0 +1,15 @@
+{
+  "name": "gdg.es",
+  "version": "0.0.0",
+  "description": "Official GDG Spain website",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GDGSpain/gdg.es.git"
+  },
+  "author": "Abdón Rodríguez Davila <a@abdonrd.com> (https://abdonrd.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GDGSpain/gdg.es/issues"
+  },
+  "homepage": "https://gdg.es"
+}
