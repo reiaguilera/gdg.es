@@ -11,5 +11,10 @@
   "bugs": {
     "url": "https://github.com/GDGSpain/gdg.es/issues"
   },
-  "homepage": "https://gdg.es"
+  "homepage": "https://gdg.es",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "connect-history-api-fallback": "^1.2.0",
+    "gulp": "^3.9.1"
+  }
 }
