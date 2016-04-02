@@ -2,6 +2,12 @@
   "name": "gdg.es",
   "version": "0.0.0",
   "description": "Official GDG Spain website",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "gulp serve",
+    "lint": "gulp lint"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:GDGSpain/gdg.es.git"
