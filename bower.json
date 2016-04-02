@@ -1,4 +1,7 @@
 {
   "name": "gdg.es",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0"
+  }
 }
