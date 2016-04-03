@@ -1,4 +1,12 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/carbon-route/carbon-location.html">
+<link rel="import" href="../bower_components/carbon-route/carbon-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+
+<link rel="import" href="gdgspain-page-events.html">
+<link rel="import" href="gdgspain-page-groups.html">
+<link rel="import" href="gdgspain-page-home.html">
+<link rel="import" href="gdgspain-page-logo.html">
 
 <dom-module id="gdgspain-app">
   <template>
@@ -8,7 +16,15 @@
       }
     </style>
 
-    <span>GDG Spain website.</span>
+    <carbon-location route="{{route}}" use-hash-as-path></carbon-location>
+    <carbon-route route="{{route}}" pattern="/:page" data="{{routeData}}"></carbon-route>
+
+    <iron-pages selected="{{routeData.page}}" attr-for-selected="data-route">
+      <gdgspain-page-home data-route="home"></gdgspain-page-home>
+      <gdgspain-page-groups data-route="groups"></gdgspain-page-groups>
+      <gdgspain-page-events data-route="events"></gdgspain-page-events>
+      <gdgspain-page-logo data-route="logo"></gdgspain-page-logo>
+    </iron-pages>
   </template>
   <script>
     Polymer({

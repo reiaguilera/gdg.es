@@ -2,6 +2,7 @@
   "name": "gdg.es",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "carbon-route": "PolymerElements/carbon-route#^0.8.0"
   }
 }
