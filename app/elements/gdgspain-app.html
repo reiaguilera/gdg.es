@@ -28,7 +28,16 @@
   </template>
   <script>
     Polymer({
-      is: 'gdgspain-app'
+      is: 'gdgspain-app',
+
+      ready: function() {
+        // TODO: Remove this async https://github.com/PolymerElements/carbon-route/issues/44
+        this.async(function() {
+          if (!this.route.path) {
+            this.set('route.path', '/home');
+          }
+        });
+      }
     });
   </script>
 </dom-module>
