@@ -15,6 +15,7 @@ var merge = require('merge-stream');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var historyApiFallback = require('connect-history-api-fallback');
+var doc = require('gulp-task-doc').patchGulp();
 
 var DIST = 'dist';
 
@@ -147,6 +148,9 @@ gulp.task('vulcanize', function() {
     .pipe(gulp.dest(dist('elements/gdgspain-app')))
     .pipe($.size({title: 'vulcanize'}));
 });
+
+// Show help about all tasks
+gulp.task('help', doc.help());
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function(cb) {
