@@ -11,6 +11,7 @@ before_script:
   - sleep 3
   - npm i -g bower gulp
   - bower i
+  - gulp lint
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_7ef9aab2215d_key -iv $encrypted_7ef9aab2215d_iv
     -in service-account.json.enc -out service-account.json -d
