@@ -13,7 +13,7 @@ before_deploy:
     -in service-account.json.enc -out service-account.json -d
   - gulp
   - cp app.yaml dist/app.yaml
-  - LAST_TAG=`git describe --abbrev=0`
+  - LAST_TAG=`git describe --abbrev=0` || LAST_TAG="develop"; echo $LAST_TAG
   - DEPLOY_VERSION=${LAST_TAG//.}
 deploy:
   - provider: gae
