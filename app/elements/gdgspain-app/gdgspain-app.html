@@ -189,13 +189,13 @@ This code may only be used under the MIT style license found at LICENSE.txt
         }
       },
 
-      ready: function() {
+      attached: function() {
         // TODO: Remove this async https://github.com/PolymerElements/carbon-route/issues/44
         this.async(function() {
           if (!this._route.path) {
             this.set('_route.path', '/home');
           }
-        }, 10);
+        });
       },
 
       _drawerSelected: function() {
