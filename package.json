@@ -1,6 +1,6 @@
 {
   "name": "gdg.es",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Official GDG Spain website",
   "scripts": {
     "prestart": "npm install",
