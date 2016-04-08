@@ -35,6 +35,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 <link rel="import" href="../gdgspain-pages/gdgspain-page-groups.html">
 <link rel="import" href="../gdgspain-pages/gdgspain-page-home.html">
 <link rel="import" href="../gdgspain-pages/gdgspain-page-logo.html">
+<link rel="import" href="../gdgspain-pages/gdgspain-page-404.html">
 
 <dom-module id="gdgspain-app">
 
@@ -172,11 +173,13 @@ This code may only be used under the MIT style license found at LICENSE.txt
         <neon-animated-pages
             selected="[[_routeData.page]]"
             attr-for-selected="data-route"
+            fallback-selection="404"
             animate-initial-selection>
           <gdgspain-page-home data-route="home"></gdgspain-page-home>
           <gdgspain-page-groups data-route="groups"></gdgspain-page-groups>
           <gdgspain-page-events data-route="events"></gdgspain-page-events>
           <gdgspain-page-logo data-route="logo"></gdgspain-page-logo>
+          <gdgspain-page-404 data-route="404"></gdgspain-page-404>
         </neon-animated-pages>
       </app-header-layout>
     </app-drawer-layout>
