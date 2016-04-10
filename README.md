@@ -1,4 +1,4 @@
-# [gdg.es](https://gdg.es)
+# [gdg.es](https://gdg.es) [![Build status](https://travis-ci.org/GDGSpain/gdg.es.svg?branch=develop)](https://travis-ci.org/GDGSpain/gdg.es)
 
 Official GDG Spain website
 
