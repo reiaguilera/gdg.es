@@ -7,7 +7,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 'use strict';
 
 var del = require('del');
-var gulp = require('gulp');
+var gulp = require('gulp-task-doc');
 
 var dist = require('./dist');
 

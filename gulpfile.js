@@ -10,8 +10,11 @@ This code may only be used under the MIT style license found at LICENSE.txt
 require('require-dir')('gulp-tasks');
 
 
-var gulp = require('gulp');
+var gulp = require('gulp-task-doc');
 var runSequence = require('run-sequence');
+
+// Show help about all tasks
+gulp.task('help', gulp.help());
 
 // Build production files, the default task
 gulp.task('default', ['clean'], function(cb) {

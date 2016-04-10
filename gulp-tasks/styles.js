@@ -7,7 +7,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 'use strict';
 
 var changed = require('gulp-changed');
-var gulp = require('gulp');
+var gulp = require('gulp-task-doc');
 var minifyCss = require('gulp-minify-css');
 var path = require('path');
 var size = require('gulp-size');

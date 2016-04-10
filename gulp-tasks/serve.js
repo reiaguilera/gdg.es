@@ -6,7 +6,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 
 'use strict';
 
-var gulp = require('gulp');
+var gulp = require('gulp-task-doc');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var historyApiFallback = require('connect-history-api-fallback');
