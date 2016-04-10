@@ -5,6 +5,7 @@
   "scripts": {
     "prestart": "npm install",
     "start": "gulp serve",
+    "build": "gulp",
     "lint": "gulp lint"
   },
   "repository": {
