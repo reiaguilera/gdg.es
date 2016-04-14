@@ -5,6 +5,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="gdgspain-page-animation.html">
 
 <dom-module id="gdgspain-page-groups">
   <template>
@@ -18,7 +19,11 @@ This code may only be used under the MIT style license found at LICENSE.txt
   </template>
   <script>
     Polymer({
-      is: 'gdgspain-page-groups'
+      is: 'gdgspain-page-groups',
+
+      behaviors: [
+        Polymer.GDGSpainPageAnimation
+      ]
     });
   </script>
 </dom-module>
