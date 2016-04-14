@@ -1,0 +1,29 @@
+<!--
+@license
+Copyright (c) 2016 GDG Spain
+This code may only be used under the MIT style license found at LICENSE.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="gdgspain-page-animation.html">
+
+<dom-module id="gdgspain-page-404">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <p>404 page</p>
+  </template>
+  <script>
+    Polymer({
+      is: 'gdgspain-page-404',
+
+      behaviors: [
+        Polymer.GDGSpainPageAnimation
+      ]
+    });
+  </script>
+</dom-module>
