@@ -25,6 +25,8 @@ This code may only be used under the MIT style license found at LICENSE.txt
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
 
+<link rel="import" href="../../bower_components/neon-animation/neon-animated-pages.html">
+
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
@@ -109,6 +111,10 @@ This code may only be used under the MIT style license found at LICENSE.txt
       iron-selector a.iron-selected {
         background-color: #d3d5d7;
       }
+
+      neon-animated-pages {
+        @apply(--layout-fullbleed);
+      }
     </style>
 
     <carbon-location route="{{_route}}" use-hash-as-path></carbon-location>
@@ -163,12 +169,15 @@ This code may only be used under the MIT style license found at LICENSE.txt
           </app-toolbar>
         </app-header>
 
-        <iron-pages selected="[[_routeData.page]]" attr-for-selected="data-route">
+        <neon-animated-pages
+            selected="[[_routeData.page]]"
+            attr-for-selected="data-route"
+            animate-initial-selection>
           <gdgspain-page-home data-route="home"></gdgspain-page-home>
           <gdgspain-page-groups data-route="groups"></gdgspain-page-groups>
           <gdgspain-page-events data-route="events"></gdgspain-page-events>
           <gdgspain-page-logo data-route="logo"></gdgspain-page-logo>
-        </iron-pages>
+        </neon-animated-pages>
       </app-header-layout>
     </app-drawer-layout>
 
