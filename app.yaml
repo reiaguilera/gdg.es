@@ -6,9 +6,9 @@ handlers:
 - url: /bower_components
   static_dir: bower_components
 
-- url: /(.*)\.(html|js|css)
+- url: /(.*)\.(html|js|json|css)
   static_files: \1.\2
-  upload: (.*)\.(html|js|css)
+  upload: (.*)\.(html|js|json|css)
 
 - url: /
   static_files: index.html
