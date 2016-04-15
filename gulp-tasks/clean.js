@@ -13,5 +13,5 @@ var dist = require('./dist');
 
 // Clean output directory
 gulp.task('clean', function() {
-  return del(['.tmp', dist()]);
+  return del([dist()]);
 });

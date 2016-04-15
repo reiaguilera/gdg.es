@@ -34,12 +34,9 @@ var serve = function(baseDir) {
 
 // Serve project and watch files for changes
 gulp.task('serve', ['lint'], function() {
-  serve(['.tmp', 'app']);
+  serve(['app']);
 
   gulp.watch(['app/**/*.html', '!app/bower_components/**/*.html'], ['lint', reload]);
-  gulp.watch(['app/images/**/*'], reload);
-  gulp.watch(['app/scripts/**/*.js'], ['lint', reload]);
-  gulp.watch(['app/styles/**/*.css'], reload);
 });
 
 // Build and serve the output from the dist build
