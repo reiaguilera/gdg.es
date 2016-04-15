@@ -11,11 +11,15 @@ var gulp = require('gulp-task-doc');
 
 // Lint JavaScript
 gulp.task('lint', function() {
-  return gulp.src([
-      'app/elements/**/*.html',
-      'gulpfile.js'
-    ])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+  var filesToLint = [
+    'gulpfile.js',
+    'gulp-tasks/**/*.js',
+    'app/index.html',
+    'app/elements/**/*.html'
+  ];
+
+  return gulp.src(filesToLint)
+             .pipe(eslint())
+             .pipe(eslint.format())
+             .pipe(eslint.failAfterError());
 });

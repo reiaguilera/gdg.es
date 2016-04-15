@@ -19,7 +19,7 @@ gulp.task('help', gulp.help());
 // Build production files, the default task
 gulp.task('default', ['clean'], function(cb) {
   runSequence(
-    ['copy', 'styles'],
+    'copy',
     'html',
     'vulcanize',
     cb);
