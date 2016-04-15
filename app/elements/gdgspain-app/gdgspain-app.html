@@ -38,7 +38,6 @@ This code may only be used under the MIT style license found at LICENSE.txt
 <link rel="import" href="../gdgspain-pages/gdgspain-page-404.html">
 
 <dom-module id="gdgspain-app">
-
   <template>
     <style>
       :host {
@@ -112,10 +111,6 @@ This code may only be used under the MIT style license found at LICENSE.txt
       iron-selector a.iron-selected {
         background-color: #d3d5d7;
       }
-
-      neon-animated-pages {
-        @apply(--layout-fullbleed);
-      }
     </style>
 
     <carbon-location route="{{_route}}" use-hash-as-path></carbon-location>
@@ -188,7 +183,6 @@ This code may only be used under the MIT style license found at LICENSE.txt
 
     <iron-media-query query="min-width: 600px" query-matches="{{wideLayout}}"></iron-media-query>
   </template>
-
   <script>
     Polymer({
       is: 'gdgspain-app',
@@ -222,5 +216,4 @@ This code may only be used under the MIT style license found at LICENSE.txt
       }
     });
   </script>
-
 </dom-module>
