@@ -116,6 +116,10 @@ This code may only be used under the MIT style license found at LICENSE.txt
     <carbon-location route="{{_route}}" use-hash-as-path></carbon-location>
     <carbon-route route="{{_route}}" pattern="/:page" data="{{_routeData}}"></carbon-route>
 
+    <app-scrollpos-control selected="[[_routeData.page]]"></app-scrollpos-control>
+
+    <iron-media-query query="min-width: 600px" query-matches="{{wideLayout}}"></iron-media-query>
+
     <app-drawer-layout force-narrow>
       <app-drawer id="drawer" swipe-open>
         <app-header-layout has-scrolling-region>
@@ -183,10 +187,6 @@ This code may only be used under the MIT style license found at LICENSE.txt
         </neon-animated-pages>
       </app-header-layout>
     </app-drawer-layout>
-
-    <app-scrollpos-control selected="[[_routeData.page]]"></app-scrollpos-control>
-
-    <iron-media-query query="min-width: 600px" query-matches="{{wideLayout}}"></iron-media-query>
   </template>
   <script>
     Polymer({
@@ -210,7 +210,9 @@ This code may only be used under the MIT style license found at LICENSE.txt
       },
 
       _drawerSelected: function() {
-        if (!this.$.drawer.persistent) this.$.drawer.close();
+        if (!this.$.drawer.persistent) {
+          this.$.drawer.close();
+        }
       },
 
       _onLayoutChange: function(wide) {
