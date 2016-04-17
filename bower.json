@@ -2,7 +2,7 @@
   "name": "gdg.es",
   "private": true,
   "dependencies": {
-    "app-layout": "PolymerLabs/app-layout#^0.0.14",
+    "app-layout": "PolymerLabs/app-layout#^0.0.15",
     "carbon-route": "PolymerElements/carbon-route#^0.8.0",
     "font-roboto": "PolymerElements/font-roboto#^1.0.0",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.0",
