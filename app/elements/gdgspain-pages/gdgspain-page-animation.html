@@ -24,7 +24,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 							}
 						}, {
 							name: 'transform-animation',
-							node: this,
+							node: this.$$('.translate-animation'),
 							transformOrigin: '100%',
 							transformFrom: 'translateY(30%)',
 							transformTo: 'translateY(0%)',
@@ -42,7 +42,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 							}
 						}, {
 							name: 'transform-animation',
-							node: this,
+							node: this.$$('.translate-animation'),
 							transformOrigin: '100%',
 							transformFrom: 'translateY(0%)',
 							transformTo: 'translateY(30%)',
@@ -59,6 +59,6 @@ This code may only be used under the MIT style license found at LICENSE.txt
 
   Polymer.GDGSpainPageAnimation = [
     Polymer.GDGSpainPageAnimationImpl,
-    Polymer.NeonAnimatableBehavior
+    Polymer.NeonAnimationRunnerBehavior
   ]
 </script>
