@@ -21,6 +21,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
 
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
@@ -54,6 +55,12 @@ This code may only be used under the MIT style license found at LICENSE.txt
         display: none !important;
       }
 
+      .drawer-content {
+        overflow-y: auto;
+
+        height: 100%;
+      }
+
       .drawer-menu {
         display: block;
       }
@@ -73,33 +80,41 @@ This code may only be used under the MIT style license found at LICENSE.txt
       }
 
       .main-header {
-        height: 212px;
-
-        color: #fff;
-        background-color: #3f51b5;
+        color: var(--primary-color);
+        background-color: #FFFFFF;
       }
 
-      app-toolbar.tall {
-        height: 148px;
+      .logo-container {
+        @apply(--layout-horizontal);
+        @apply(--layout-flex);
+        @apply(--layout-center);
+
+        height: 100%;
       }
 
-      [title],
-      [condensed-title] {
-        font-weight: 400;
+      .logo-container a {
+        display: inline-block;
+
+        width: 164px;
+        height: 34px;
       }
 
-      [title] {
-        margin-left: 50px;
-      }
-
-      [condensed-title] {
-        margin-left: 24px;
+      .logo-container a iron-image {
+        width: 100%;
+        height: 100%;
       }
 
       .main-menu {
-        --paper-tabs-selection-bar-color: #ffffff;
+        --paper-tabs-selection-bar-color: var(--primary-color);
 
-        width: 350px;
+        width: 250px;
+        height: 100%;
+      }
+
+      .main-menu paper-tab {
+        --paper-tab-ink: var(--accent-color);
+
+        color: var(--primary-color);
       }
 
       .main-menu paper-tab a {
@@ -109,7 +124,7 @@ This code may only be used under the MIT style license found at LICENSE.txt
         text-decoration: none;
         text-transform: uppercase;
 
-        color: #ffffff;
+        color: inherit;
       }
     </style>
 
@@ -121,56 +136,53 @@ This code may only be used under the MIT style license found at LICENSE.txt
     <iron-media-query query="min-width: 600px" query-matches="{{wideLayout}}"></iron-media-query>
 
     <app-drawer-layout force-narrow>
-      <app-drawer id="drawer" swipe-open>
-        <app-header-layout has-scrolling-region>
+      <app-drawer id="drawer" swipe-open="{{!wideLayout}}">
+        <div class="drawer-content">
           <iron-selector
               selected="{{_routeData.page}}"
               attr-for-selected="data-route"
               on-iron-activate="_drawerSelected"
               class="drawer-menu">
             <a href="#/home" data-route="home" tabindex="-1">
-              <paper-item>Home</paper-item>
+              <paper-item>Inicio</paper-item>
             </a>
             <a href="#/groups" data-route="groups" tabindex="-1">
-              <paper-item>Groups</paper-item>
+              <paper-item>Grupos</paper-item>
             </a>
             <a href="#/events" data-route="events" tabindex="-1">
-              <paper-item>Events</paper-item>
+              <paper-item>Eventos</paper-item>
             </a>
             <a href="#/logo" data-route="logo" tabindex="-1">
               <paper-item>Logo</paper-item>
             </a>
           </iron-selector>
-        </app-header-layout>
+        </div>
       </app-drawer>
 
       <app-header-layout>
-        <app-header condenses reveals effects="waterfall resize-title" class="main-header">
+        <app-header condenses reveals effects="waterfall" class="main-header">
           <app-toolbar>
             <paper-icon-button icon="menu" drawer-toggle hidden$="{{wideLayout}}"></paper-icon-button>
-            <span condensed-title>GDG Spain</span>
+            <div class="logo-container" hidden$="{{!wideLayout}}">
+              <a href="#/home">
+                <iron-image src="../../images/gdgspain-logo.png" preload sizing="cover"></iron-image>
+              </a>
+            </div>
             <paper-tabs
                 selected="[[_routeData.page]]"
                 attr-for-selected="data-route"
                 hidden$="{{!wideLayout}}"
                 class="main-menu">
-              <paper-tab data-route="home" link>
-                <a href="#/home" tabindex="-1">Home</a>
-              </paper-tab>
               <paper-tab data-route="groups" link>
-                <a href="#/groups" tabindex="-1">Groups</a>
+                <a href="#/groups" tabindex="-1">Grupos</a>
               </paper-tab>
               <paper-tab data-route="events" link>
-                <a href="#/events" tabindex="-1">Events</a>
+                <a href="#/events" tabindex="-1">Eventos</a>
               </paper-tab>
               <paper-tab data-route="logo" link>
                 <a href="#/logo" tabindex="-1">Logo</a>
               </paper-tab>
             </paper-tabs>
-          </app-toolbar>
-
-          <app-toolbar class="tall">
-            <h1 title>GDG Spain</h1>
           </app-toolbar>
         </app-header>
 
