@@ -36,3 +36,8 @@ deploy:
     version: $DEPLOY_VERSION
     on:
       branch: master
+
+# Temporal environment variable to fix Google Cloud SDK issue
+# https://code.google.com/p/google-cloud-sdk/issues/detail?id=784#c6
+env:
+  - CLOUDSDK_APP_USE_GSUTIL=1
