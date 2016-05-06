@@ -1,6 +1,10 @@
 {
   "name": "GDG Spain",
   "short_name": "GDG Spain",
+  "start_url": "/?homescreen=1",
+  "theme_color": "#2E3AA1",
+  "background_color": "#3E4EB8",
+  "display": "standalone",
   "icons": [
     {
       "src": "images/manifest/icon-72x72.png",
@@ -42,9 +46,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "background_color": "#3E4EB8",
-  "theme_color": "#2E3AA1",
-  "display": "standalone",
-  "start_url": "/?homescreen=1"
+  ]
 }
