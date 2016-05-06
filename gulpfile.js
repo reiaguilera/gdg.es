@@ -20,7 +20,7 @@ gulp.task('help', gulp.help());
 gulp.task('default', ['clean'], function(cb) {
   runSequence(
     'copy',
-    'html',
+    ['images', 'html'],
     'vulcanize',
     cb);
 });
