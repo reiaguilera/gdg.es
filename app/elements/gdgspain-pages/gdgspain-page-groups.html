@@ -23,8 +23,6 @@ This code may only be used under the MIT style license found at LICENSE.txt
     <style include="gdgspain-pages-shared-styles">
       :host {
         display: block;
-
-        margin: 0 16px;
       }
 
       .groups-list {
@@ -57,6 +55,18 @@ This code may only be used under the MIT style license found at LICENSE.txt
 
       paper-icon-button {
         color: var(--secondary-text-color);
+      }
+
+      @media all and (min-width: 648px) {
+        .groups-list {
+          @apply(--layout-horizontal);
+          @apply(--layout-wrap);
+          @apply(--layout-justified);
+        }
+
+        paper-card {
+          width: 300px;
+        }
       }
     </style>
 
