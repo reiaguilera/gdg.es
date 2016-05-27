@@ -1,36 +1,23 @@
 {
   "name": "gdg.es",
+  "description": "The GDG Spain official website",
   "version": "0.1.0",
-  "description": "Official GDG Spain website",
-  "scripts": {
-    "prestart": "npm install",
-    "start": "gulp serve",
-    "build": "gulp",
-    "lint": "gulp lint"
-  },
+  "author": "Abdón Rodríguez Davila <a@abdonrd.com> (https://abdonrd.com)",
+  "homepage": "https://gdg.es",
+  "license": "https://gdg.es/LICENSE.txt",
   "repository": {
     "type": "git",
-    "url": "git@github.com:GDGSpain/gdg.es.git"
+    "url": "git://github.com/GDGSpain/gdg.es.git"
   },
-  "author": "Abdón Rodríguez Davila <a@abdonrd.com> (https://abdonrd.com)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/GDGSpain/gdg.es/issues"
   },
-  "homepage": "https://gdg.es",
+  "scripts": {
+    "lint": "gulp lint"
+  },
   "devDependencies": {
-    "browser-sync": "^2.11.0",
-    "connect-history-api-fallback": "^1.2.0",
-    "del": "^2.2.0",
     "eslint-plugin-html": "^1.4.0",
     "gulp": "^3.9.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-size": "^2.1.0",
-    "gulp-task-doc": "^1.0.0",
-    "gulp-useref": "^3.0.0",
-    "gulp-vulcanize": "^6.1.0",
-    "merge-stream": "^1.0.0",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.0"
+    "gulp-eslint": "^2.0.0"
   }
 }

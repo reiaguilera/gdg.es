@@ -1,26 +1,26 @@
-/*
-@license
-Copyright (c) 2016 GDG Spain
-This code may only be used under the MIT style license found at LICENSE.txt
-*/
+/**
+ * @license
+ * Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+ * This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+ */
 
 'use strict';
 
-// Load custom tasks from the `gulp-tasks` directory
-require('require-dir')('gulp-tasks');
+var gulp = require('gulp');
+var eslint = require('gulp-eslint');
 
+// Lint JavaScript
+gulp.task('lint', function() {
+  var filesToLint = [
+    'gulpfile.js',
+    'index.html',
+    'service-worker.js',
+    'sw-precache-config.js',
+    'src/**/*.html'
+  ];
 
-var gulp = require('gulp-task-doc');
-var runSequence = require('run-sequence');
-
-// Show help about all tasks
-gulp.task('help', gulp.help());
-
-// Build production files, the default task
-gulp.task('default', ['clean'], function(cb) {
-  runSequence(
-    'copy',
-    ['images', 'html'],
-    'vulcanize',
-    cb);
+  return gulp.src(filesToLint)
+             .pipe(eslint())
+             .pipe(eslint.format())
+             .pipe(eslint.failAfterError());
 });

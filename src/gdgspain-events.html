@@ -1,0 +1,35 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/src/gdgspain-animation-page.html">
+<link rel="import" href="/src/gdgspain-shared-styles.html">
+
+<dom-module id="gdgspain-events">
+  <template>
+    <style include="gdgspain-shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+
+    <h1>Eventos</h1>
+
+    <div class="translate-animation">
+      Contenido de eventos aquí.
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'gdgspain-events',
+
+      behaviors: [
+        Polymer.GDGSpainAnimationPage
+      ]
+    });
+  </script>
+</dom-module>
