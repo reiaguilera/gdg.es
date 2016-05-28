@@ -16,7 +16,7 @@
     "lint": "gulp lint"
   },
   "devDependencies": {
-    "eslint-plugin-html": "^1.4.0",
+    "eslint-plugin-html": "^1.5.0",
     "gulp": "^3.9.0",
     "gulp-eslint": "^2.0.0"
   }
