@@ -12,10 +12,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="/bower_components/neon-animation/animations/fade-out-animation.html">
 <link rel="import" href="/bower_components/neon-animation/animations/transform-animation.html">
 <link rel="import" href="/bower_components/neon-animation/neon-animation-runner-behavior.html">
-<link rel="import" href="/bower_components/paper-card/paper-card.html">
-<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="/src/gdgspain-animation-page.html">
-<link rel="import" href="/src/gdgspain-icons.html">
+<link rel="import" href="/src/gdgspain-group-item.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-groups">
@@ -29,32 +27,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         @apply(--layout-vertical);
       }
 
-      paper-card {
+      gdgspain-group-item {
         margin-bottom: 16px;
-
-        --paper-card-actions: {
-          border-top: none;
-        };
-      }
-
-      .card-actions {
-        @apply(--layout-horizontal-reverse);
-      }
-
-      .social-networks a {
-        display: inline-block;
-
-        text-decoration: none;
-
-        color: inherit;
-        /* NOTE: Both values are needed, since some phones require the `transparent` value. */
-
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      paper-icon-button {
-        color: var(--secondary-text-color);
       }
 
       @media all and (min-width: 648px) {
@@ -64,7 +38,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           @apply(--layout-justified);
         }
 
-        paper-card {
+        gdgspain-group-item {
           width: 300px;
         }
       }
@@ -81,27 +55,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <div class="translate-animation">
       <div class="groups-list">
         <template is="dom-repeat" items="[[groups]]" as="group" on-dom-change="_domChanged">
-          <paper-card heading="[[group.name]]" image="[[group.image]]">
-            <div class="card-actions">
-              <div class="social-networks">
-                <template is="dom-if" if="[[group.googlePlus]]">
-                  <a href="[[group.googlePlus]]" tabindex="-1" target="_blank" title$="Google+ page of [[group.name]]">
-                    <paper-icon-button icon="gdgspain-icons:googlePlus" hidden$="[[!group.googlePlus]]"></paper-icon-button>
-                  </a>
-                </template>
-                <template is="dom-if" if="[[group.twitter]]">
-                  <a href="[[group.twitter]]" tabindex="-1" target="_blank" title$="Twitter profile of [[group.name]]">
-                    <paper-icon-button icon="gdgspain-icons:twitter" hidden$="[[!group.twitter]]"></paper-icon-button>
-                  </a>
-                </template>
-                <template is="dom-if" if="[[group.facebook]]">
-                  <a href="[[group.facebook]]" tabindex="-1" target="_blank" title$="Facebook page of [[group.name]]">
-                    <paper-icon-button icon="gdgspain-icons:facebook" hidden$="[[!group.facebook]]"></paper-icon-button>
-                  </a>
-                </template>
-              </div>
-            </div>
-          </paper-card>
+          <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
         </template>
       </div>
     </div>
@@ -163,7 +117,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       },
 
       _domChanged: function() {
-        var nodes = Polymer.dom(this.root).querySelectorAll('paper-card');
+        var nodes = Polymer.dom(this.root).querySelectorAll('gdgspain-group-item');
         this.animationConfig['entry'][1].nodes = Array.prototype.slice.call(nodes);
         this.playAnimation('entry');
       }
