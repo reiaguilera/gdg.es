@@ -1,0 +1,36 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="gdgspain-shared-styles">
+  <template>
+    <style>
+      :host {
+        --margin-size: 16px;
+
+        max-width: 960px;
+        margin: 0 var(--margin-size);
+      }
+
+      h1 {
+        letter-spacing: -0.04em;
+
+        color: var(--primary-color);
+
+        font-size: 34px;
+        font-weight: 400;
+      }
+
+      @media all and (min-width: 648px) {
+        :host {
+          margin: 0 auto;
+          padding: 0 var(--margin-size);
+        }
+      }
+    </style>
+  </template>
+</dom-module>

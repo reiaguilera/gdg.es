@@ -1,0 +1,11 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/gdgspain-app.html",
+  "fragments": [
+    "src/gdgspain-404.html",
+    "src/gdgspain-branding.html",
+    "src/gdgspain-events.html",
+    "src/gdgspain-groups.html",
+    "src/gdgspain-home.html"
+  ]
+}

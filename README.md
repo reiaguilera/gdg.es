@@ -1,34 +1,49 @@
 # [gdg.es](https://gdg.es) [![Build status](https://travis-ci.org/GDGSpain/gdg.es.svg?branch=develop)](https://travis-ci.org/GDGSpain/gdg.es)
 
-Official GDG Spain website
+The GDG Spain official website
 
-
-### Getting Started
+### Setup
 
 To work on the GDG Spain website, clone the repository.
+
+#### Prerequisites
+
+Install [polymer-cli](https://github.com/Polymer/polymer-cli):
+
+```
+npm install -g polymer-cli
+```
 
 #### Install dependencies
 
 ```
-npm i && bower i
+npm install && bower install
 ```
 
-#### Start a local development server
+#### Start the development server
+
+This command serves the app at `http://localhost:8080` and provides basic URL
+routing for the app:
 
 ```
-npm start
+polymer serve
 ```
 
-This outputs an IP address you can use to locally test and another that can be used on devices connected to your network.
+#### Build
 
-#### Build and vulcanize
+This command performs HTML, CSS, and JS minification on the application
+dependencies, and generates a `service-worker.js` file with code to pre-cache
+the dependencies based on the entrypoint and fragments specified in
+`polymer.json`. The minified files are output to the `build/unbundled` folder,
+and are suitable for serving from a HTTP/2+Push compatible server.
+
+In addition the command also creates a fallback `build/bundled` folder,
+generated using fragment bundling, suitable for serving from non
+H2/push-compatible servers or to clients that do not support H2/Push.
 
 ```
-npm run build
+polymer build
 ```
-
-Build and optimize the current project, ready for deployment. This includes vulcanization, image, script, stylesheet and HTML optimization and minification.
-
 
 ### License
 
