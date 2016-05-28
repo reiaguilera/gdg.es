@@ -1,4 +1,3 @@
-application: gdg-es
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -28,6 +27,11 @@ handlers:
 - url: /manifest.json
   static_files: manifest.json
   upload: manifest.json
+  secure: always
+
+- url: /LICENSE.txt
+  static_files: LICENSE.txt
+  upload: LICENSE.txt
   secure: always
 
 - url: /.*

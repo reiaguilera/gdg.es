@@ -17,15 +17,13 @@ before_deploy:
   - openssl aes-256-cbc -K $encrypted_7ef9aab2215d_key -iv $encrypted_7ef9aab2215d_iv
     -in service-account.json.enc -out service-account.json -d
   - polymer build
-  - cd build/bundled
-  - rm bower.json gulpfile.js package.json polymer.json README.md service-account.json.enc
   - LAST_TAG=`git describe --abbrev=0` || LAST_TAG="develop"; echo $LAST_TAG
   - DEPLOY_VERSION=${LAST_TAG//.}
 deploy:
   - provider: gae
     skip_cleanup: true
     project: gdg-es
-    config: app.yaml
+    config: build/bundled/app.yaml
     version: develop
     no_promote: true
     on:
@@ -33,7 +31,7 @@ deploy:
   - provider: gae
     skip_cleanup: true
     project: gdg-es
-    config: app.yaml
+    config: build/bundled/app.yaml
     version: $DEPLOY_VERSION
     on:
       branch: master
