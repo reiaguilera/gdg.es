@@ -122,7 +122,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         background-color: #d3d5d7;
       }
 
-      @media all and (max-width: 767px) {
+      @media all and (max-width: 625px) {
         .logo-container {
           @apply(--layout-center-justified);
 
@@ -135,7 +135,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <app-location route="{{route}}"></app-location>
     <app-route route="{{route}}" pattern="/:page" data="{{routeData}}"></app-route>
 
-    <iron-media-query query="max-width: 767px" query-matches="{{smallScreen}}"></iron-media-query>
+    <iron-media-query query="max-width: 625px" query-matches="{{smallScreen}}"></iron-media-query>
 
     <app-header-layout>
       <app-header condenses reveals effects="waterfall" role="navigation">
