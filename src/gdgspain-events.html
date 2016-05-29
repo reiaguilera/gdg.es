@@ -5,6 +5,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/src/gdgspain-events-item.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-events">
@@ -12,12 +15,39 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <style include="gdgspain-shared-styles">
       :host {
         display: block;
+
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 var(--margin-size);
+      }
+
+      .events-list {
+        padding: 0;
+
+        list-style: none;
+      }
+
+      .events-list li {
+        width: 100%;
+        margin-bottom: 20px;
       }
     </style>
 
+    <iron-ajax
+      auto
+      url="/data/events.json"
+      handle-as="json"
+      last-response="{{events}}"></iron-ajax>
+
     <h1>Eventos</h1>
 
-    Contenido de eventos aquí.
+    <ul class="events-list">
+      <template is="dom-repeat" items="[[events]]" as="events">
+        <li>
+          <gdgspain-events-item events="[[events]]"></gdgspain-events-item>
+        </li>
+      </template>
+    </ul>
   </template>
 
   <script>
