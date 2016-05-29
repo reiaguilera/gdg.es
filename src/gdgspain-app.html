@@ -122,6 +122,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         background-color: #d3d5d7;
       }
 
+      .app-drawer-scrollable {
+        overflow: auto;
+
+        height: 100%;
+      }
+
       @media all and (max-width: 625px) {
         .logo-container {
           @apply(--layout-center-justified);
@@ -186,17 +192,19 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
     <template is="dom-if" if="[[smallScreen]]">
       <app-drawer opened="{{drawerOpened}}" swipe-open tabindex="0">
-        <app-toolbar class="drawer-toolbar"></app-toolbar>
-        <iron-selector
-            selected="[[page]]"
-            attr-for-selected="name"
-            class="drawer-menu"
-            role="navigation">
-          <a name="home" href="/">Inicio</a>
-          <a name="groups" href="/groups">Grupos</a>
-          <a name="events" href="/events">Eventos</a>
-          <a name="branding" href="/branding">Branding</a>
-        </iron-selector>
+        <div class="app-drawer-scrollable">
+          <app-toolbar class="drawer-toolbar"></app-toolbar>
+          <iron-selector
+              selected="[[page]]"
+              attr-for-selected="name"
+              class="drawer-menu"
+              role="navigation">
+            <a name="home" href="/">Inicio</a>
+            <a name="groups" href="/groups">Grupos</a>
+            <a name="events" href="/events">Eventos</a>
+            <a name="branding" href="/branding">Branding</a>
+          </iron-selector>
+        </div>
       </app-drawer>
     </template>
   </template>
