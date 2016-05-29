@@ -5,19 +5,72 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-home">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style>
       :host {
         display: block;
       }
+
+      header {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+
+        height: calc(100vh - 64px);
+        padding: 0 16px;
+
+        text-align: center;
+
+        color: white;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                          url('/images/gdgspain-summit-2015.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      h1 {
+        margin: 0;
+
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      h2 {
+        margin: 1em 0 0;
+
+        font-size: 1em;
+        font-weight: normal;
+      }
+
+      @media (min-width: 375px) {
+        h1 {
+          font-size: 2.4em;
+        }
+
+        h2 {
+          font-size: 1.2em;
+        }
+      }
+
+      @media (min-width: 625px) {
+        h1 {
+          font-size: 2.8em;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+      }
     </style>
 
-    <h1>Inicio</h1>
-
-    Contenido de inicio aquí.
+    <header>
+      <h1>Google Developer Group Spain</h1>
+      <h2>Organización que agrupa a todos los Google Developer Groups de España</h2>
+    </header>
   </template>
 
   <script>
