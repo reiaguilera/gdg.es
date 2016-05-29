@@ -10,7 +10,7 @@ before_script:
   - 'export DISPLAY=:99.0'
   - sh -e /etc/init.d/xvfb start
   - sleep 3
-  - npm install -g polymer-cli bower
+  - npm install -g polymer-cli@0.8.0 bower
   - bower install
   - gulp lint
 before_deploy:
