@@ -5,7 +5,6 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
-<link rel="import" href="/src/gdgspain-animation-page.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-404">
@@ -18,18 +17,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
     <h1>Error 404</h1>
 
-    <div class="translate-animation">
-      Contenido de error 404 aquí.
-    </div>
+    Contenido de error 404 aquí.
   </template>
 
   <script>
     Polymer({
-      is: 'gdgspain-404',
-
-      behaviors: [
-        Polymer.GDGSpainAnimationPage
-      ]
+      is: 'gdgspain-404'
     });
   </script>
 </dom-module>
