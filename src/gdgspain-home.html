@@ -5,7 +5,6 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
-<link rel="import" href="/src/gdgspain-animation-page.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-home">
@@ -18,18 +17,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
     <h1>Inicio</h1>
 
-    <div class="translate-animation">
-      Contenido de inicio aquí.
-    </div>
+    Contenido de inicio aquí.
   </template>
 
   <script>
     Polymer({
-      is: 'gdgspain-home',
-
-      behaviors: [
-        Polymer.GDGSpainAnimationPage
-      ]
+      is: 'gdgspain-home'
     });
   </script>
 </dom-module>
