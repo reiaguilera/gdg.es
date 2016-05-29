@@ -34,14 +34,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .groups-list li {
-        @apply(--layout-flex-auto);
-
-        box-sizing: border-box;
-        max-width: 32%;
-        margin-bottom: 2%;
-
-        -webkit-flex-basis: 32%;
-        flex-basis: 32%;
+        width: 100%;
+        margin-bottom: 20px;
       }
 
       .groups-list a {
@@ -50,13 +44,25 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         text-decoration: none;
       }
 
-      @media (max-width: 767px) {
+      @media (min-width: 425px) {
         .groups-list li {
+          @apply(--layout-flex-auto);
+
           max-width: 48%;
           margin-bottom: 4%;
 
           -webkit-flex-basis: 48%;
           flex-basis: 48%;
+        }
+      }
+
+      @media (min-width: 625px) {
+        .groups-list li {
+          max-width: 32%;
+          margin-bottom: 2%;
+
+          -webkit-flex-basis: 32%;
+          flex-basis: 32%;
         }
       }
     </style>
