@@ -5,6 +5,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="/bower_components/polymerfire/firebase-app.html">
 <link rel="import" href="/bower_components/polymerfire/firebase-query.html">
@@ -77,11 +78,17 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         data="{{groups}}">
     </firebase-query>
 
+    <app-indexeddb-mirror
+        key="groups"
+        data="{{groups}}"
+        persisted-data="{{persistedGroups}}">
+    </app-indexeddb-mirror>
+
     <h1>Grupos</h1>
 
     <div id="transformedContent">
       <ul id="gridList" class="groups-list">
-        <template is="dom-repeat" items="[[groups]]" as="group" on-dom-change="_domChanged">
+        <template is="dom-repeat" items="[[persistedGroups]]" as="group" on-dom-change="_domChanged">
           <li>
             <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
           </li>
