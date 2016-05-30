@@ -10,7 +10,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
 <dom-module id="gdgspain-home">
   <template>
-    <style>
+    <style include="gdgspain-shared-styles">
       :host {
         display: block;
       }
@@ -46,6 +46,24 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         font-weight: normal;
       }
 
+      section {
+        padding: var(--margin-size);
+
+        background-color: white;
+      }
+
+      .section-content {
+        overflow: auto;
+
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      h3 {
+        font-family: 'Roboto Slab', 'Roboto', 'Noto', sans-serif;
+        font-size: 24px;
+      }
+
       @media (min-width: 375px) {
         h1 {
           font-size: 2.4em;
@@ -71,6 +89,13 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       <h1>Google Developer Group Spain</h1>
       <h2>Organización que agrupa a todos los Google Developer Groups de España</h2>
     </header>
+
+    <section>
+      <div class="section-content">
+        <h3>¿Qué son los GDGs?</h3>
+        <p>Los <strong>Google Developer Groups</strong> (GDGs) son grupos sin ánimo de lucro que forman una comunidad mundial interesada en aprender, utilizar y promover todo tipo de tecnologías.</p>
+      </div>
+    </section>
   </template>
 
   <script>
