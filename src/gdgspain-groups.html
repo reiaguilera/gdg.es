@@ -7,7 +7,6 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="/bower_components/polymerfire/firebase-app.html">
 <link rel="import" href="/bower_components/polymerfire/firebase-query.html">
 <link rel="import" href="/src/gdgspain-animate-page-grid.html">
 <link rel="import" href="/src/gdgspain-group-item.html">
@@ -67,11 +66,6 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         }
       }
     </style>
-
-    <firebase-app
-        auth-domain="gdg-es.firebaseapp.com"
-        database-url="https://gdg-es.firebaseio.com"
-        api-key="AIzaSyAIF5ALCsCSwKZhPqIIfwSOQPRrswB1Ovc"></firebase-app>
 
     <firebase-query
         path="/groups"

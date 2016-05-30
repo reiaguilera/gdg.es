@@ -20,6 +20,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="/bower_components/paper-styles/typography.html">
 <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="/bower_components/polymerfire/firebase-app.html">
 <link rel="import" href="/src/gdgspain-icons.html">
 
 <dom-module id="gdgspain-app">
@@ -142,6 +143,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <app-route route="{{route}}" pattern="/:page" data="{{routeData}}"></app-route>
 
     <iron-media-query query="max-width: 625px" query-matches="{{smallScreen}}"></iron-media-query>
+
+    <firebase-app
+        auth-domain="gdg-es.firebaseapp.com"
+        database-url="https://gdg-es.firebaseio.com"
+        api-key="AIzaSyAIF5ALCsCSwKZhPqIIfwSOQPRrswB1Ovc"></firebase-app>
 
     <app-header-layout>
       <app-header condenses reveals effects="waterfall" role="navigation">
