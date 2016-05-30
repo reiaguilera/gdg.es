@@ -10,26 +10,19 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
   <template>
     <style>
       :host {
-        --margin-size: 16px;
+        --gdg-color-blue: #4285f4;
+        --gdg-color-red: #db4437;
+        --gdg-color-green: #0f9d58;
+        --gdg-color-yellow: #ffc107;
 
-        max-width: 960px;
-        margin: 0 var(--margin-size);
+        --margin-size: 16px;
       }
 
       h1 {
         letter-spacing: -0.04em;
 
-        color: var(--primary-color);
-
         font-size: 34px;
         font-weight: 400;
-      }
-
-      @media all and (min-width: 648px) {
-        :host {
-          margin: 0 auto;
-          padding: 0 var(--margin-size);
-        }
       }
     </style>
   </template>
