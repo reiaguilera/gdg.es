@@ -6,6 +6,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/src/gdgspain-animate-page.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-home">
@@ -143,61 +144,63 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
     </style>
 
-    <header>
-      <h1>Google Developer Group Spain</h1>
-      <h2>Organización que agrupa a todos los Google Developer Groups de España</h2>
-    </header>
+    <div id="transformedContent">
+      <header>
+        <h1>Google Developer Group Spain</h1>
+        <h2>Organización que agrupa a todos los Google Developer Groups de España</h2>
+      </header>
 
-    <section class="what-are-the-gdgs">
-      <div class="section-content">
-        <h3>¿Qué son los GDGs?</h3>
-        <div class="section-columns">
-          <div>
-            <p>Los <strong>Google Developer Groups</strong> (GDGs) son grupos sin ánimo de lucro que forman una comunidad mundial interesada en aprender, utilizar y promover todo tipo de tecnologías.</p>
-          </div>
-          <div class="gdg-logo">
-            <iron-image src="/images/gdg-logo.png" preload></iron-image>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <section class="footer-media-links">
+      <section class="what-are-the-gdgs">
         <div class="section-content">
-          <a href="https://twitter.com/GDG_ES" target="_blank"
-              title="Seguir @GDG_ES en Twitter"
-              aria-label="Seguir GDG Spain en Twitter">
-            <iron-icon icon="gdgspain-icons:twitter"></iron-icon>
-            <span hidden="[[smallScreen]]">@GDG_ES</span>
-          </a>
-          <a href="https://github.com/GDGSpain" target="_blank"
-              title="Seguir /GDGSpain en GitHub"
-              aria-label="Seguir GDG Spain en GitHub">
-            <iron-icon icon="gdgspain-icons:github"></iron-icon>
-            <span hidden="[[smallScreen]]">/GDGSpain</span>
-          </a>
-          <a href="https://www.facebook.com/GDGSpain" target="_blank"
-              title="Seguir /GDGSpain en Facebook"
-              aria-label="Seguir GDG Spain en Facebook">
-            <iron-icon icon="gdgspain-icons:facebook"></iron-icon>
-            <span hidden="[[smallScreen]]">/GDGSpain</span>
-          </a>
-          <a href="https://instagram.com/GDGSpain" target="_blank"
-              title="Seguir /GDGSpain en Instagram"
-              aria-label="Seguir GDG Spain en Instagram">
-            <iron-icon icon="gdgspain-icons:instagram"></iron-icon>
-            <span hidden="[[smallScreen]]">/GDGSpain</span>
-          </a>
-          <a href="https://plus.google.com/103312118848889503691" target="_blank"
-              title="Seguir +GDG Spain en Google+"
-              aria-label="Seguir GDG Spain en Google+">
-            <iron-icon icon="gdgspain-icons:googlePlus"></iron-icon>
-            <span hidden="[[smallScreen]]">GDG Spain</span>
-          </a>
+          <h3>¿Qué son los GDGs?</h3>
+          <div class="section-columns">
+            <div class="gdg-description">
+              <p>Los <strong>Google Developer Groups</strong> (GDGs) son grupos sin ánimo de lucro que forman una comunidad mundial interesada en aprender, utilizar y promover todo tipo de tecnologías.</p>
+            </div>
+            <div class="gdg-logo">
+              <iron-image src="/images/gdg-logo.png" preload></iron-image>
+            </div>
+          </div>
         </div>
       </section>
-    </footer>
+
+      <footer>
+        <section class="footer-media-links">
+          <div class="section-content">
+            <a href="https://twitter.com/GDG_ES" target="_blank"
+                title="Seguir @GDG_ES en Twitter"
+                aria-label="Seguir GDG Spain en Twitter">
+              <iron-icon icon="gdgspain-icons:twitter"></iron-icon>
+              <span hidden="[[smallScreen]]">@GDG_ES</span>
+            </a>
+            <a href="https://github.com/GDGSpain" target="_blank"
+                title="Seguir /GDGSpain en GitHub"
+                aria-label="Seguir GDG Spain en GitHub">
+              <iron-icon icon="gdgspain-icons:github"></iron-icon>
+              <span hidden="[[smallScreen]]">/GDGSpain</span>
+            </a>
+            <a href="https://www.facebook.com/GDGSpain" target="_blank"
+                title="Seguir /GDGSpain en Facebook"
+                aria-label="Seguir GDG Spain en Facebook">
+              <iron-icon icon="gdgspain-icons:facebook"></iron-icon>
+              <span hidden="[[smallScreen]]">/GDGSpain</span>
+            </a>
+            <a href="https://instagram.com/GDGSpain" target="_blank"
+                title="Seguir /GDGSpain en Instagram"
+                aria-label="Seguir GDG Spain en Instagram">
+              <iron-icon icon="gdgspain-icons:instagram"></iron-icon>
+              <span hidden="[[smallScreen]]">/GDGSpain</span>
+            </a>
+            <a href="https://plus.google.com/103312118848889503691" target="_blank"
+                title="Seguir +GDG Spain en Google+"
+                aria-label="Seguir GDG Spain en Google+">
+              <iron-icon icon="gdgspain-icons:googlePlus"></iron-icon>
+              <span hidden="[[smallScreen]]">GDG Spain</span>
+            </a>
+          </div>
+        </section>
+      </footer>
+    </div>
   </template>
 
   <script>
@@ -208,7 +211,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         smallScreen: {
           type: Boolean
         }
-      }
+      },
+
+      behaviors: [
+        Polymer.GDGSpainAnimatePage
+      ]
     });
   </script>
 </dom-module>
