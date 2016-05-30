@@ -7,6 +7,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/src/gdgspain-animate-page-grid.html">
 <link rel="import" href="/src/gdgspain-events-item.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
@@ -28,6 +29,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       .events-list li {
         width: 100%;
         margin-bottom: 20px;
+
+        will-change: transform;
       }
     </style>
 
@@ -39,18 +42,24 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
     <h1>Eventos</h1>
 
-    <ul class="events-list">
-      <template is="dom-repeat" items="[[events]]" as="events">
-        <li>
-          <gdgspain-events-item events="[[events]]"></gdgspain-events-item>
-        </li>
-      </template>
-    </ul>
+    <div id="transformedContent">
+      <ul id="gridList" class="events-list">
+        <template is="dom-repeat" items="[[events]]" as="events" on-dom-change="_domChanged">
+          <li>
+            <gdgspain-events-item events="[[events]]"></gdgspain-events-item>
+          </li>
+        </template>
+      </ul>
+    </div>
   </template>
 
   <script>
     Polymer({
-      is: 'gdgspain-events'
+      is: 'gdgspain-events',
+
+      behaviors: [
+        Polymer.GDGSpainAnimatePageGrid
+      ]
     });
   </script>
 </dom-module>

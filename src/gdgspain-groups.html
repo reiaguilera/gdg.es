@@ -7,6 +7,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/src/gdgspain-animate-page-grid.html">
 <link rel="import" href="/src/gdgspain-group-item.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
@@ -32,6 +33,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       .groups-list li {
         width: 100%;
         margin-bottom: 20px;
+
+        will-change: transform;
       }
 
       .groups-list a {
@@ -71,18 +74,24 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
     <h1>Grupos</h1>
 
-    <ul class="groups-list">
-      <template is="dom-repeat" items="[[groups]]" as="group">
-        <li>
-          <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
-        </li>
-      </template>
-    </ul>
+    <div id="transformedContent">
+      <ul id="gridList" class="groups-list">
+        <template is="dom-repeat" items="[[groups]]" as="group" on-dom-change="_domChanged">
+          <li>
+            <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
+          </li>
+        </template>
+      </ul>
+    </div>
   </template>
 
   <script>
     Polymer({
       is: 'gdgspain-groups',
+
+      behaviors: [
+        Polymer.GDGSpainAnimatePageGrid
+      ],
 
       properties: {
         groups: {
