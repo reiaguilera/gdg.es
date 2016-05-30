@@ -14,11 +14,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
   <template>
     <style include="gdgspain-shared-styles">
       :host {
-        display: block;
+        @apply(--page-content);
 
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 var(--margin-size);
+        display: block;
       }
 
       .groups-list {
