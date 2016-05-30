@@ -8,7 +8,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="/src/gdgspain-animate-page-grid.html">
-<link rel="import" href="/src/gdgspain-events-item.html">
+<link rel="import" href="/src/gdgspain-event-item.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-events">
@@ -44,9 +44,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
     <div id="transformedContent">
       <ul id="gridList" class="events-list">
-        <template is="dom-repeat" items="[[events]]" as="events" on-dom-change="_domChanged">
+        <template is="dom-repeat" items="[[events]]" as="event" on-dom-change="_domChanged">
           <li>
-            <gdgspain-events-item events="[[events]]"></gdgspain-events-item>
+            <gdgspain-event-item event="[[event]]"></gdgspain-event-item>
           </li>
         </template>
       </ul>
