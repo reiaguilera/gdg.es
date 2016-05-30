@@ -47,7 +47,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       section {
-        padding: calc(var(--margin-size) * 2) var(--margin-size);
+        padding: calc(var(--margin-size) * 3) var(--margin-size);
       }
 
       .section-content {
@@ -62,6 +62,10 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         font-size: 24px;
       }
 
+      h3:first-child {
+        margin-top: 0;
+      }
+
       .what-are-the-gdgs {
         background-color: #ffffff;
       }
@@ -69,6 +73,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       .gdg-logo {
         @apply(--layout-vertical);
         @apply(--layout-center-center);
+
+        margin-top: 30px;
       }
 
       .gdg-logo iron-image {
@@ -78,6 +84,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .footer-media-links {
+        padding: calc(var(--margin-size) * 2) var(--margin-size);
+
         background-color: var(--gdg-color-blue);
       }
 
@@ -129,6 +137,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         .gdg-logo {
           @apply(--layout);
 
+          margin-top: 0;
           margin-left: 30px;
         }
       }
