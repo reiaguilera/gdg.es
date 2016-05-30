@@ -5,8 +5,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
-<link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="/bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/bower_components/polymerfire/firebase-query.html">
 <link rel="import" href="/src/gdgspain-animate-page-grid.html">
 <link rel="import" href="/src/gdgspain-group-item.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
@@ -66,17 +67,22 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
     </style>
 
-    <iron-ajax
-      auto
-      url="/data/groups.json"
-      handle-as="json"
-      last-response="{{groups}}"></iron-ajax>
+    <firebase-query
+        path="/groups"
+        data="{{groups}}">
+    </firebase-query>
+
+    <app-indexeddb-mirror
+        key="groups"
+        data="{{groups}}"
+        persisted-data="{{persistedGroups}}">
+    </app-indexeddb-mirror>
 
     <h1>Grupos</h1>
 
     <div id="transformedContent">
       <ul id="gridList" class="groups-list">
-        <template is="dom-repeat" items="[[groups]]" as="group" on-dom-change="_domChanged">
+        <template is="dom-repeat" items="[[persistedGroups]]" as="group" on-dom-change="_domChanged">
           <li>
             <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
           </li>
@@ -91,13 +97,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
       behaviors: [
         Polymer.GDGSpainAnimatePageGrid
-      ],
-
-      properties: {
-        groups: {
-          type: Array
-        }
-      }
+      ]
     });
   </script>
 </dom-module>
