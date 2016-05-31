@@ -95,9 +95,24 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     Polymer({
       is: 'gdgspain-groups',
 
+      properties: {
+        visible: {
+          type: Boolean,
+          observer: '_visibleChanged'
+        }
+      },
+
       behaviors: [
         Polymer.GDGSpainAnimatePageGrid
-      ]
+      ],
+
+      _visibleChanged: function(visible) {
+        if (visible) {
+          this.fire('change-section', {
+            title: 'Grupos - GDG Spain'
+          });
+        }
+      }
     });
   </script>
 </dom-module>

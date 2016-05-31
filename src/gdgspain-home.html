@@ -215,12 +215,25 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       properties: {
         smallScreen: {
           type: Boolean
+        },
+
+        visible: {
+          type: Boolean,
+          observer: '_visibleChanged'
         }
       },
 
       behaviors: [
         Polymer.GDGSpainAnimatePage
-      ]
+      ],
+
+      _visibleChanged: function(visible) {
+        if (visible) {
+          this.fire('change-section', {
+            title: 'GDG Spain - Google Developer Groups Spain'
+          });
+        }
+      }
     });
   </script>
 </dom-module>

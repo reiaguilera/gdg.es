@@ -193,6 +193,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       <neon-animated-pages
           selected="[[page]]"
           attr-for-selected="name"
+          selected-attribute="visible"
           fallback-selection="404">
         <gdgspain-home name="home" small-screen="{{smallScreen}}"></gdgspain-home>
         <gdgspain-groups name="groups"></gdgspain-groups>
@@ -244,6 +245,10 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         '_routePageChanged(routeData.page)'
       ],
 
+      listeners: {
+        'change-section': '_onChangeSection'
+      },
+
       _routePageChanged: function(page) {
         this.page = page || 'home';
 
@@ -271,6 +276,14 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
       _toggleDrawer: function() {
         this.drawerOpened = !this.drawerOpened;
+      },
+
+      _onChangeSection: function(event) {
+        var title = event.detail.title;
+
+        if (title) {
+          document.title = title;
+        }
       }
     });
   </script>
