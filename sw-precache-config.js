@@ -8,7 +8,21 @@ module.exports = {
   staticFileGlobs: [
     '/index.html',
     '/manifest.json',
-    '/bower_components/webcomponentsjs/webcomponents-lite.min.js'
+    '/bower_components/webcomponentsjs/webcomponents-lite.min.js',
+    '/images/*'
   ],
-  navigateFallback: '/index.html'
+  navigateFallback: '/index.html',
+  navigateFallbackWhitelist: [/^(?!.*\.html$|\/data\/).*/],
+  runtimeCaching: [
+    {
+      urlPattern: /\/data\/images\/.*/,
+      handler: 'cacheFirst',
+      options: {
+        cache: {
+          maxEntries: 50,
+          name: 'items-cache'
+        }
+      }
+    }
+  ]
 };
