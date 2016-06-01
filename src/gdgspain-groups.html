@@ -8,8 +8,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="/bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="/bower_components/polymerfire/firebase-query.html">
-<link rel="import" href="/src/gdgspain-animate-page-grid.html">
-<link rel="import" href="/src/gdgspain-group-item.html">
+<link rel="import" href="/src/gdgspain-animate-page.html">
+<link rel="import" href="/src/gdgspain-groups-list.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-groups">
@@ -19,51 +19,6 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         @apply(--page-content);
 
         display: block;
-      }
-
-      .groups-list {
-        @apply(--layout-horizontal);
-        @apply(--layout-wrap);
-        @apply(--layout-justified);
-
-        padding: 0;
-
-        list-style: none;
-      }
-
-      .groups-list li {
-        width: 100%;
-        margin-bottom: 20px;
-
-        will-change: transform;
-      }
-
-      .groups-list a {
-        display:block;
-
-        text-decoration: none;
-      }
-
-      @media (min-width: 425px) {
-        .groups-list li {
-          @apply(--layout-flex-auto);
-
-          max-width: 48%;
-          margin-bottom: 4%;
-
-          -webkit-flex-basis: 48%;
-          flex-basis: 48%;
-        }
-      }
-
-      @media (min-width: 625px) {
-        .groups-list li {
-          max-width: 32%;
-          margin-bottom: 2%;
-
-          -webkit-flex-basis: 32%;
-          flex-basis: 32%;
-        }
       }
     </style>
 
@@ -81,13 +36,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <h1>Grupos</h1>
 
     <div id="transformedContent">
-      <ul id="gridList" class="groups-list">
-        <template is="dom-repeat" items="[[persistedGroups]]" as="group" on-dom-change="_domChanged">
-          <li>
-            <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
-          </li>
-        </template>
-      </ul>
+      <gdgspain-groups-list groups="[[persistedGroups]]"></gdgspain-groups-list>
     </div>
   </template>
 
@@ -103,7 +52,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       },
 
       behaviors: [
-        Polymer.GDGSpainAnimatePageGrid
+        Polymer.GDGSpainAnimatePage
       ],
 
       _visibleChanged: function(visible) {

@@ -6,10 +6,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
-<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="/bower_components/polymerfire/firebase-query.html">
-<link rel="import" href="/src/gdgspain-animate-page-grid.html">
-<link rel="import" href="/src/gdgspain-event-item.html">
+<link rel="import" href="/src/gdgspain-animate-page.html">
+<link rel="import" href="/src/gdgspain-events-list.html">
 <link rel="import" href="/src/gdgspain-shared-styles.html">
 
 <dom-module id="gdgspain-events">
@@ -49,13 +48,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <h1>Eventos</h1>
 
     <div id="transformedContent">
-      <ul id="gridList" class="events-list">
-        <template is="dom-repeat" items="[[persistedEvents]]" as="event" on-dom-change="_domChanged">
-          <li>
-            <gdgspain-event-item event="[[event]]"></gdgspain-event-item>
-          </li>
-        </template>
-      </ul>
+      <gdgspain-events-list events="[[persistedEvents]]"></gdgspain-events-list>
     </div>
   </template>
 
@@ -71,7 +64,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       },
 
       behaviors: [
-        Polymer.GDGSpainAnimatePageGrid
+        Polymer.GDGSpainAnimatePage
       ],
 
       _visibleChanged: function(visible) {

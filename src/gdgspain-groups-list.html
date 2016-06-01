@@ -1,0 +1,97 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/src/gdgspain-cascaded-animation.html">
+<link rel="import" href="/src/gdgspain-group-item.html">
+
+<dom-module id="gdgspain-groups-list">
+  <template>
+    <style include="gdgspain-shared-styles">
+      :host {
+        display: block;
+      }
+
+      .groups-list {
+        @apply(--layout-horizontal);
+        @apply(--layout-wrap);
+        @apply(--layout-justified);
+
+        padding: 0;
+
+        list-style: none;
+      }
+
+      .groups-list li {
+        width: 100%;
+        margin-bottom: 20px;
+
+        will-change: transform;
+      }
+
+      .groups-list a {
+        display:block;
+
+        text-decoration: none;
+      }
+
+      @media (min-width: 425px) {
+        .groups-list li {
+          @apply(--layout-flex-auto);
+
+          max-width: 48%;
+          margin-bottom: 4%;
+
+          -webkit-flex-basis: 48%;
+          flex-basis: 48%;
+        }
+      }
+
+      @media (min-width: 625px) {
+        .groups-list li {
+          max-width: 32%;
+          margin-bottom: 2%;
+
+          -webkit-flex-basis: 32%;
+          flex-basis: 32%;
+        }
+      }
+    </style>
+
+    <ul id="list" class="groups-list">
+      <template is="dom-repeat" items="[[groups]]" as="group" on-dom-change="_domChanged">
+        <li>
+          <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
+        </li>
+      </template>
+    </ul>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'gdgspain-groups-list',
+
+      properties: {
+        groups: {
+          type: Array
+        }
+      },
+
+      behaviors: [
+        Polymer.GDGSpainCascadedAnimation
+      ],
+
+      _domChanged: function() {
+        if (this.groups.length > 0) {
+          var nodes = Polymer.dom(this.$.list).querySelectorAll('li');
+          this.animationConfig['entry'][1].nodes = nodes;
+          this.playAnimation('entry');
+        }
+      }
+    });
+  </script>
+</dom-module>
