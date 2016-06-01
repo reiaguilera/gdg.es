@@ -58,23 +58,43 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       <div class="card-actions">
         <div class="social-networks">
           <template is="dom-if" if="[[group.googlePlus]]">
-            <a href="[[group.googlePlus]]" tabindex="-1" target="_blank" title$="Google+ page of [[group.name]]">
-              <paper-icon-button icon="gdgspain-icons:googlePlus" hidden$="[[!group.googlePlus]]"></paper-icon-button>
+            <a href=$"[[group.googlePlus]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Google+"
+                aria-label$="[[group.name]] en Google+">
+              <paper-icon-button
+                  icon="gdgspain-icons:googlePlus"
+                  hidden$="[[!group.googlePlus]]"></paper-icon-button>
             </a>
           </template>
           <template is="dom-if" if="[[group.meetup]]">
-            <a href="[[group.meetup]]" tabindex="-1" target="_blank" title$="Meetup of [[group.name]]">
-              <paper-icon-button icon="gdgspain-icons:meetup" hidden$="[[!group.meetup]]"></paper-icon-button>
+            <a href=$"[[group.meetup]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Meetup"
+                aria-label$="[[group.name]] en Meetup">
+              <paper-icon-button
+                  icon="gdgspain-icons:meetup"
+                  hidden$="[[!group.meetup]]"></paper-icon-button>
             </a>
           </template>
           <template is="dom-if" if="[[group.twitter]]">
-            <a href="[[group.twitter]]" tabindex="-1" target="_blank" title$="Twitter profile of [[group.name]]">
-              <paper-icon-button icon="gdgspain-icons:twitter" hidden$="[[!group.twitter]]"></paper-icon-button>
+            <a href=$"[[group.twitter]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Twitter"
+                aria-label$="[[group.name]] en Twitter">
+              <paper-icon-button
+                  icon="gdgspain-icons:twitter"
+                  hidden$="[[!group.twitter]]"></paper-icon-button>
             </a>
           </template>
           <template is="dom-if" if="[[group.facebook]]">
-            <a href="[[group.facebook]]" tabindex="-1" target="_blank" title$="Facebook page of [[group.name]]">
-              <paper-icon-button icon="gdgspain-icons:facebook" hidden$="[[!group.facebook]]"></paper-icon-button>
+            <a href=$"[[group.facebook]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Facebook"
+                aria-label$="[[group.name]] en Facebook">
+              <paper-icon-button
+                  icon="gdgspain-icons:facebook"
+                  hidden$="[[!group.facebook]]"></paper-icon-button>
             </a>
           </template>
         </div>
