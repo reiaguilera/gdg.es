@@ -40,38 +40,47 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         -webkit-tap-highlight-color: transparent;
       }
 
-      .date-icon {
+      paper-icon-button[icon="gdgspain-icons:event"] {
         color: var(--gdg-color-red);
       }
 
-      .event-icon {
+      paper-icon-button[icon="gdgspain-icons:place"] {
         color: var(--gdg-color-green);
+      }
+
+      paper-icon-button[icon="gdgspain-icons:twitter"] {
+        color: var(--gdg-color-blue);
       }
 
       .social-networks {
         float: right;
-
-        color: var(--gdg-color-blue);
       }
     </style>
 
     <paper-card heading="[[event.title]]">
       <div class="card-content">
         <div>
-          <a href="https://developers.google.com[[event.url]]" tabindex="-1" target="_blank">
-            <paper-icon-button icon="gdgspain-icons:event" class="date-icon"></paper-icon-button>
+          <a href$="https://developers.google.com[[event.url]]"
+              target="_blank"
+              tabindex="-1">
+            <paper-icon-button icon="gdgspain-icons:event"></paper-icon-button>
           </a>
-          <moment-element datetime="[[event.start]]" output-format="DD/MM/YY" output="{{date}}"></moment-element>
+          <moment-element datetime="[[event.start]]" output-format="DD/MM/YY" output="{{eventDate}}"></moment-element>
           <span>-</span>
           <moment-element datetime="[[event.start]]" output-format="HH:mm"></moment-element>
         </div>
         <div>
-          <a href="https://www.google.com/maps/?q=[[event.location]]" tabindex="-1" target="_blank">
-            <paper-icon-button icon="gdgspain-icons:place" class="event-icon"></paper-icon-button>
+          <a href$="https://www.google.com/maps/?q=[[event.location]]"
+              target="_blank"
+              tabindex="-1">
+            <paper-icon-button icon="gdgspain-icons:place"></paper-icon-button>
           </a>
           <span class="time">[[event.location]]</span>
-          <a href="https://twitter.com/intent/tweet?button_hashtag=GDGSpainEvent&text=[[event.title]] el {{date}} en [[event.location]]" tabindex="-1" class="social-networks" target="_blank">
-            <paper-icon-button icon="gdgspain-icons:twitter" class="social-networks"></paper-icon-button>
+          <a href$="[[twitterShareUrl]]"
+              target="_blank"
+              tabindex="-1"
+              class="social-networks">
+            <paper-icon-button icon="gdgspain-icons:twitter"></paper-icon-button>
           </a>
         </div>
       </div>
@@ -84,8 +93,26 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
       properties: {
         event: {
-          type: Object
+          type: Object,
+          value: function() {
+            return {};
+          }
+        },
+
+        eventDate: {
+          type: String,
+          value: ''
+        },
+
+        twitterShareUrl: {
+          type: String,
+          computed: '_computeTwitterUrl(event, eventDate)'
         }
+      },
+
+      _computeTwitterUrl: function(event, eventDate) {
+        var tweetMessage = event.title + ' el ' + eventDate + ' en ' + event.location;
+        return 'https://twitter.com/intent/tweet?button_hashtag=GDGSpainEvent&text=' + tweetMessage;
       }
     });
   </script>
