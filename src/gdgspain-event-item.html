@@ -58,7 +58,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <paper-card heading="[[event.title]]">
       <div class="card-content">
         <div>
-          <a href="https://developers.google.com[[event.url]]" tabindex="-1" target="_blank">
+          <a href$="https://developers.google.com[[event.url]]" tabindex="-1" target="_blank">
             <paper-icon-button icon="gdgspain-icons:event" class="date-icon"></paper-icon-button>
           </a>
           <moment-element datetime="[[event.start]]" output-format="DD/MM/YY" output="{{date}}"></moment-element>
@@ -66,11 +66,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           <moment-element datetime="[[event.start]]" output-format="HH:mm"></moment-element>
         </div>
         <div>
-          <a href="https://www.google.com/maps/?q=[[event.location]]" tabindex="-1" target="_blank">
+          <a href$="https://www.google.com/maps/?q=[[event.location]]" tabindex="-1" target="_blank">
             <paper-icon-button icon="gdgspain-icons:place" class="event-icon"></paper-icon-button>
           </a>
           <span class="time">[[event.location]]</span>
-          <a href="https://twitter.com/intent/tweet?button_hashtag=GDGSpainEvent&text=[[event.title]] el {{date}} en [[event.location]]" tabindex="-1" class="social-networks" target="_blank">
+          <a href$="https://twitter.com/intent/tweet?button_hashtag=GDGSpainEvent&text=[[event.title]] el {{date}} en [[event.location]]" tabindex="-1" class="social-networks" target="_blank">
             <paper-icon-button icon="gdgspain-icons:twitter" class="social-networks"></paper-icon-button>
           </a>
         </div>
