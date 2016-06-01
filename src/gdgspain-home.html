@@ -114,6 +114,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .footer-media-links a span {
+        display: none;
+
         font-size: 13px;
       }
 
@@ -153,6 +155,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           margin-left: 30px;
         }
       }
+
+      @media (min-width: 730px) {
+        .footer-media-links a span {
+          display: inline-block;
+        }
+      }
     </style>
 
     <div id="transformedContent">
@@ -178,35 +186,47 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       <footer>
         <section class="footer-media-links">
           <div class="section-content">
-            <a href="https://twitter.com/GDG_ES" target="_blank"
+            <a href="https://twitter.com/GDG_ES"
+                target="_blank"
                 title="Seguir @GDG_ES en Twitter"
                 aria-label="Seguir GDG Spain en Twitter">
               <iron-icon icon="gdgspain-icons:twitter"></iron-icon>
-              <span hidden="[[smallScreen]]">@GDG_ES</span>
+              <span>@GDG_ES</span>
             </a>
-            <a href="https://github.com/GDGSpain" target="_blank"
+            <a href="https://github.com/GDGSpain"
+                target="_blank"
                 title="Seguir /GDGSpain en GitHub"
                 aria-label="Seguir GDG Spain en GitHub">
               <iron-icon icon="gdgspain-icons:github"></iron-icon>
-              <span hidden="[[smallScreen]]">/GDGSpain</span>
+              <span>/GDGSpain</span>
             </a>
-            <a href="https://www.facebook.com/GDGSpain" target="_blank"
+            <a href="https://www.youtube.com/channel/UC70BMjIR9M64_gzNCEfKF_w"
+                target="_blank"
+                title="Suscribirse GDG Spain en YouTube"
+                aria-label="Suscribirse GDG Spain en YouTube">
+              <iron-icon icon="gdgspain-icons:youtube"></iron-icon>
+              <span>GDG Spain</span>
+            </a>
+            <a href="https://www.facebook.com/GDGSpain"
+                target="_blank"
                 title="Seguir /GDGSpain en Facebook"
                 aria-label="Seguir GDG Spain en Facebook">
               <iron-icon icon="gdgspain-icons:facebook"></iron-icon>
-              <span hidden="[[smallScreen]]">/GDGSpain</span>
+              <span>/GDGSpain</span>
             </a>
-            <a href="https://instagram.com/GDGSpain" target="_blank"
+            <a href="https://instagram.com/GDGSpain"
+                target="_blank"
                 title="Seguir /GDGSpain en Instagram"
                 aria-label="Seguir GDG Spain en Instagram">
               <iron-icon icon="gdgspain-icons:instagram"></iron-icon>
-              <span hidden="[[smallScreen]]">/GDGSpain</span>
+              <span>/GDGSpain</span>
             </a>
-            <a href="https://plus.google.com/103312118848889503691" target="_blank"
+            <a href="https://plus.google.com/103312118848889503691"
+                target="_blank"
                 title="Seguir +GDG Spain en Google+"
                 aria-label="Seguir GDG Spain en Google+">
               <iron-icon icon="gdgspain-icons:googlePlus"></iron-icon>
-              <span hidden="[[smallScreen]]">GDG Spain</span>
+              <span>GDG Spain</span>
             </a>
           </div>
         </section>
