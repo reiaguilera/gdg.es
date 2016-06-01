@@ -62,6 +62,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
               <paper-icon-button icon="gdgspain-icons:googlePlus" hidden$="[[!group.googlePlus]]"></paper-icon-button>
             </a>
           </template>
+          <template is="dom-if" if="[[group.meetup]]">
+            <a href="[[group.meetup]]" tabindex="-1" target="_blank" title$="Meetup of [[group.name]]">
+              <paper-icon-button icon="gdgspain-icons:meetup" hidden$="[[!group.meetup]]"></paper-icon-button>
+            </a>
+          </template>
           <template is="dom-if" if="[[group.twitter]]">
             <a href="[[group.twitter]]" tabindex="-1" target="_blank" title$="Twitter profile of [[group.name]]">
               <paper-icon-button icon="gdgspain-icons:twitter" hidden$="[[!group.twitter]]"></paper-icon-button>
