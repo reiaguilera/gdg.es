@@ -1,0 +1,116 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/bower_components/paper-card/paper-card.html">
+<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="/src/gdgspain-icons.html">
+
+<dom-module id="gdgspain-group-item">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      paper-card {
+        width: 100%;
+
+        --paper-card-actions: {
+          @apply(--layout-horizontal-reverse);
+
+          border-top: none;
+        };
+
+        --paper-card-header-image-text: {
+          bottom: 6px; /* TODO: Fix the paper-card-header-image-text alignment */
+
+          box-sizing: border-box;
+          width: 100%;
+
+          color: #ffffff;
+          background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+        };
+      }
+
+      .social-networks a {
+        display: inline-block;
+
+        text-decoration: none;
+
+        color: inherit;
+
+        /* NOTE: Both values are needed, since some phones require the `transparent` value. */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      paper-icon-button {
+        color: var(--secondary-text-color);
+      }
+    </style>
+
+    <paper-card heading="[[group.name]]" image="[[group.image]]">
+      <div class="card-actions">
+        <div class="social-networks">
+          <template is="dom-if" if="[[group.googlePlus]]">
+            <a href=$"[[group.googlePlus]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Google+"
+                aria-label$="[[group.name]] en Google+">
+              <paper-icon-button
+                  icon="gdgspain-icons:googlePlus"
+                  hidden$="[[!group.googlePlus]]"></paper-icon-button>
+            </a>
+          </template>
+          <template is="dom-if" if="[[group.meetup]]">
+            <a href=$"[[group.meetup]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Meetup"
+                aria-label$="[[group.name]] en Meetup">
+              <paper-icon-button
+                  icon="gdgspain-icons:meetup"
+                  hidden$="[[!group.meetup]]"></paper-icon-button>
+            </a>
+          </template>
+          <template is="dom-if" if="[[group.twitter]]">
+            <a href=$"[[group.twitter]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Twitter"
+                aria-label$="[[group.name]] en Twitter">
+              <paper-icon-button
+                  icon="gdgspain-icons:twitter"
+                  hidden$="[[!group.twitter]]"></paper-icon-button>
+            </a>
+          </template>
+          <template is="dom-if" if="[[group.facebook]]">
+            <a href=$"[[group.facebook]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.name]] en Facebook"
+                aria-label$="[[group.name]] en Facebook">
+              <paper-icon-button
+                  icon="gdgspain-icons:facebook"
+                  hidden$="[[!group.facebook]]"></paper-icon-button>
+            </a>
+          </template>
+        </div>
+      </div>
+    </paper-card>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'gdgspain-group-item',
+
+      properties: {
+        group: {
+          type: Object
+        }
+      }
+    });
+  </script>
+</dom-module>

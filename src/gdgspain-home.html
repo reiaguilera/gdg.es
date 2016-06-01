@@ -1,0 +1,268 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/src/gdgspain-animate-page.html">
+<link rel="import" href="/src/gdgspain-shared-styles.html">
+
+<dom-module id="gdgspain-home">
+  <template>
+    <style include="gdgspain-shared-styles">
+      :host {
+        display: block;
+      }
+
+      header {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+
+        height: calc(100vh - 64px);
+        padding: 0 16px;
+
+        text-align: center;
+
+        color: white;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                          url('/images/gdgspain-summit-2015.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      h1 {
+        margin: 0;
+
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      h2 {
+        margin: 1em 0 0;
+
+        font-size: 1em;
+        font-weight: normal;
+      }
+
+      section {
+        padding: calc(var(--margin-size) * 3) var(--margin-size);
+      }
+
+      .section-content {
+        overflow: auto;
+
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      h3 {
+        font-family: 'Roboto Slab', 'Roboto', 'Noto', sans-serif;
+        font-size: 24px;
+      }
+
+      h3:first-child {
+        margin-top: 0;
+      }
+
+      .what-are-the-gdgs {
+        background-color: #ffffff;
+      }
+
+      .gdg-description {
+        @apply(--layout);
+        @apply(--layout-flex);
+      }
+
+      .gdg-logo {
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+
+        margin-top: 30px;
+      }
+
+      .gdg-logo iron-image {
+        --iron-image-width: 100%;
+
+        width: 200px;
+      }
+
+      .footer-media-links {
+        padding: calc(var(--margin-size) * 2) var(--margin-size);
+
+        background-color: var(--gdg-color-blue);
+      }
+
+      .footer-media-links .section-content {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+        @apply(--layout-center-justified);
+      }
+
+      .footer-media-links a {
+        margin-right: 30px;
+
+        text-decoration: none;
+
+        color: #ffffff;
+      }
+
+      .footer-media-links a:last-child {
+        margin-right: 0;
+      }
+
+      .footer-media-links a span {
+        display: none;
+
+        font-size: 13px;
+      }
+
+      .footer-bottom {
+        padding: var(--margin-size);
+
+        background-color: #455a64;
+      }
+
+      @media (min-width: 375px) {
+        h1 {
+          font-size: 2.4em;
+        }
+
+        h2 {
+          font-size: 1.2em;
+        }
+      }
+
+      @media (min-width: 625px) {
+        h1 {
+          font-size: 2.8em;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        .section-columns {
+          @apply(--layout-horizontal);
+        }
+
+        .gdg-logo {
+          @apply(--layout);
+
+          margin-top: 0;
+          margin-left: 30px;
+        }
+      }
+
+      @media (min-width: 730px) {
+        .footer-media-links a span {
+          display: inline-block;
+        }
+      }
+    </style>
+
+    <div id="transformedContent">
+      <header>
+        <h1>Google Developer Group Spain</h1>
+        <h2>Organización que agrupa a todos los Google Developer Groups de España</h2>
+      </header>
+
+      <section class="what-are-the-gdgs">
+        <div class="section-content">
+          <h3>¿Qué son los GDGs?</h3>
+          <div class="section-columns">
+            <div class="gdg-description">
+              <p>Los <strong>Google Developer Groups</strong> (GDGs) son grupos sin ánimo de lucro que forman una comunidad mundial interesada en aprender, utilizar y promover todo tipo de tecnologías.</p>
+            </div>
+            <div class="gdg-logo">
+              <iron-image src="/images/gdg-logo.png" preload></iron-image>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <section class="footer-media-links">
+          <div class="section-content">
+            <a href="https://twitter.com/GDG_ES"
+                target="_blank"
+                title="Seguir @GDG_ES en Twitter"
+                aria-label="Seguir GDG Spain en Twitter">
+              <iron-icon icon="gdgspain-icons:twitter"></iron-icon>
+              <span>@GDG_ES</span>
+            </a>
+            <a href="https://github.com/GDGSpain"
+                target="_blank"
+                title="Seguir /GDGSpain en GitHub"
+                aria-label="Seguir GDG Spain en GitHub">
+              <iron-icon icon="gdgspain-icons:github"></iron-icon>
+              <span>/GDGSpain</span>
+            </a>
+            <a href="https://www.youtube.com/channel/UC70BMjIR9M64_gzNCEfKF_w"
+                target="_blank"
+                title="Suscribirse GDG Spain en YouTube"
+                aria-label="Suscribirse GDG Spain en YouTube">
+              <iron-icon icon="gdgspain-icons:youtube"></iron-icon>
+              <span>GDG Spain</span>
+            </a>
+            <a href="https://www.facebook.com/GDGSpain"
+                target="_blank"
+                title="Seguir /GDGSpain en Facebook"
+                aria-label="Seguir GDG Spain en Facebook">
+              <iron-icon icon="gdgspain-icons:facebook"></iron-icon>
+              <span>/GDGSpain</span>
+            </a>
+            <a href="https://instagram.com/GDGSpain"
+                target="_blank"
+                title="Seguir /GDGSpain en Instagram"
+                aria-label="Seguir GDG Spain en Instagram">
+              <iron-icon icon="gdgspain-icons:instagram"></iron-icon>
+              <span>/GDGSpain</span>
+            </a>
+            <a href="https://plus.google.com/103312118848889503691"
+                target="_blank"
+                title="Seguir +GDG Spain en Google+"
+                aria-label="Seguir GDG Spain en Google+">
+              <iron-icon icon="gdgspain-icons:googlePlus"></iron-icon>
+              <span>GDG Spain</span>
+            </a>
+          </div>
+        </section>
+        <section class="footer-bottom">
+
+        </section>
+      </footer>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'gdgspain-home',
+
+      properties: {
+        smallScreen: {
+          type: Boolean
+        },
+
+        visible: {
+          type: Boolean,
+          observer: '_visibleChanged'
+        }
+      },
+
+      behaviors: [
+        Polymer.GDGSpainAnimatePage
+      ],
+
+      _visibleChanged: function(visible) {
+        if (visible) {
+          this.fire('change-section', {
+            title: 'GDG Spain - Google Developer Groups Spain'
+          });
+        }
+      }
+    });
+  </script>
+</dom-module>

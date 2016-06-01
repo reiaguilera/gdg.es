@@ -1,0 +1,79 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
+<link rel="import" href="/bower_components/polymerfire/firebase-query.html">
+<link rel="import" href="/src/gdgspain-animate-page.html">
+<link rel="import" href="/src/gdgspain-events-list.html">
+<link rel="import" href="/src/gdgspain-shared-styles.html">
+
+<dom-module id="gdgspain-events">
+  <template>
+    <style include="gdgspain-shared-styles">
+      :host {
+        @apply(--page-content);
+
+        display: block;
+      }
+
+      .events-list {
+        padding: 0;
+
+        list-style: none;
+      }
+
+      .events-list li {
+        width: 100%;
+        margin-bottom: 20px;
+
+        will-change: transform;
+      }
+    </style>
+
+    <firebase-query
+        path="/events"
+        data="{{events}}">
+    </firebase-query>
+
+    <app-indexeddb-mirror
+        key="events"
+        data="{{events}}"
+        persisted-data="{{persistedEvents}}">
+    </app-indexeddb-mirror>
+
+    <h1>Eventos</h1>
+
+    <div id="transformedContent">
+      <gdgspain-events-list events="[[persistedEvents]]"></gdgspain-events-list>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'gdgspain-events',
+
+      properties: {
+        visible: {
+          type: Boolean,
+          observer: '_visibleChanged'
+        }
+      },
+
+      behaviors: [
+        Polymer.GDGSpainAnimatePage
+      ],
+
+      _visibleChanged: function(visible) {
+        if (visible) {
+          this.fire('change-section', {
+            title: 'Eventos - GDG Spain'
+          });
+        }
+      }
+    });
+  </script>
+</dom-module>

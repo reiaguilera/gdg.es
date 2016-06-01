@@ -1,0 +1,64 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/src/gdgspain-cascaded-animation.html">
+<link rel="import" href="/src/gdgspain-event-item.html">
+
+<dom-module id="gdgspain-events-list">
+  <template>
+    <style include="gdgspain-shared-styles">
+      :host {
+        display: block;
+      }
+
+      .events-list {
+        padding: 0;
+
+        list-style: none;
+      }
+
+      .events-list li {
+        width: 100%;
+        margin-bottom: 20px;
+
+        will-change: transform;
+      }
+    </style>
+
+    <ul id="list" class="events-list">
+      <template is="dom-repeat" items="[[events]]" as="event" on-dom-change="_domChanged">
+        <li>
+          <gdgspain-event-item event="[[event]]"></gdgspain-event-item>
+        </li>
+      </template>
+    </ul>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'gdgspain-events-list',
+
+      properties: {
+        events: {
+          type: Array
+        }
+      },
+
+      behaviors: [
+        Polymer.GDGSpainCascadedAnimation
+      ],
+
+      _domChanged: function() {
+        if (this.events.length > 0) {
+          var nodes = Polymer.dom(this.$.list).querySelectorAll('li');
+          this.animationConfig['entry'][1].nodes = nodes;
+          this.playAnimation('entry');
+        }
+      }
+    });
+  </script>
+</dom-module>
