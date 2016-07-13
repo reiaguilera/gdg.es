@@ -2,10 +2,10 @@
   "entrypoint": "index.html",
   "shell": "src/gdgspain-app.html",
   "fragments": [
-    "src/gdgspain-404.html",
-    "src/gdgspain-branding.html",
-    "src/gdgspain-events.html",
-    "src/gdgspain-groups.html",
-    "src/gdgspain-home.html"
+    "src/pages/gdgspain-404.html",
+    "src/pages/gdgspain-branding.html",
+    "src/pages/gdgspain-events.html",
+    "src/pages/gdgspain-groups.html",
+    "src/pages/gdgspain-home.html"
   ]
 }

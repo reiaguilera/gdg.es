@@ -16,7 +16,6 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
-<link rel="import" href="../bower_components/paper-card/paper-card.html"> <!-- Remove when solve the lazy loading problem -->
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
@@ -26,13 +25,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
 <dom-module id="gdgspain-app">
   <template>
-    <style>
+    <style include="gdgspain-shared-styles">
       :host {
-        --gdg-color-blue: #4285f4; /* Remove when solve the lazy loading problem */
-        --gdg-color-red: #db4437; /* Remove when solve the lazy loading problem */
-        --gdg-color-green: #0f9d58; /* Remove when solve the lazy loading problem */
-        --gdg-color-yellow: #ffc107; /* Remove when solve the lazy loading problem */
-
         display: block;
       }
 
@@ -271,7 +265,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           page = '404';
         }
 
-        var resolvedPageUrl = this.resolveUrl('gdgspain-' + page + '.html');
+        var resolvedPageUrl = this.resolveUrl('pages/gdgspain-' + page + '.html');
 
         this.importHref(resolvedPageUrl, null, null, true);
       },
