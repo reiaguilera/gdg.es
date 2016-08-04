@@ -22,6 +22,8 @@ const buildPath = 'build';
 
 gulp.task('lint', () => {
   const filesToLint = [
+    'scripts/**/*.js',
+    '!scripts/google-analytics.js',
     'src/**/*.{js,html}',
     'test/**/*.{js,html}',
     'gulpfile.js',
