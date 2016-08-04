@@ -14,7 +14,7 @@
   "dependencies": {
     "app-layout": "PolymerElements/app-layout#^0.10.0",
     "app-route": "PolymerElements/app-route#^0.9.0",
-    "app-storage": "abdonrd/app-storage#patch-1",
+    "app-storage": "PolymerElements/app-storage#^0.9.0",
     "gdg-logo": "^0.4.0",
     "iron-ajax": "PolymerElements/iron-ajax#^1.2.0",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.0",
