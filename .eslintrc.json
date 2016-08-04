@@ -4,14 +4,15 @@
     "brace-style": "error",
     "comma-spacing": ["error", {"before": false, "after": true}],
     "keyword-spacing": "error",
-    "no-console": "warn",
+    "no-console": ["warn", {"allow": ["info"]}],
     "no-multi-spaces": "error",
     "quotes": ["error", "single", "avoid-escape"],
     "space-before-blocks": "error",
     "space-before-function-paren": ["error", "never"]
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "plugins": [
     "html"
