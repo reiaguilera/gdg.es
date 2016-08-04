@@ -7,5 +7,18 @@
     "src/pages/gdgspain-events.html",
     "src/pages/gdgspain-groups.html",
     "src/pages/gdgspain-home.html"
+  ],
+  "sourceGlobs": [
+    "app.yaml",
+    "bower.json",
+    "LICENSE.txt",
+    "manifest.json",
+    "data/**/*",
+    "images/**/*",
+    "scripts/**/*",
+    "src/**/*"
+  ],
+  "includeDependencies": [
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
   ]
 }
