@@ -2,11 +2,11 @@
   "entrypoint": "index.html",
   "shell": "src/gdgspain-app.html",
   "fragments": [
-    "src/pages/gdgspain-404.html",
-    "src/pages/gdgspain-branding.html",
-    "src/pages/gdgspain-events.html",
-    "src/pages/gdgspain-groups.html",
-    "src/pages/gdgspain-home.html"
+    "src/pages/gdgspain-404/gdgspain-404.html",
+    "src/pages/gdgspain-branding/gdgspain-branding.html",
+    "src/pages/gdgspain-events/gdgspain-events.html",
+    "src/pages/gdgspain-groups/gdgspain-groups.html",
+    "src/pages/gdgspain-home/gdgspain-home.html"
   ],
   "sourceGlobs": [
     "app.yaml",
