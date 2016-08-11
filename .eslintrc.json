@@ -24,6 +24,7 @@
   },
   "globals": {
     "Polymer": false,
+    "global": false,
     "require": false
   }
 }

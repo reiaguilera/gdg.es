@@ -19,7 +19,7 @@ before_script:
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_7ef9aab2215d_key -iv $encrypted_7ef9aab2215d_iv
     -in service-account.json.enc -out service-account.json -d
-  - gulp polymer-build
+  - gulp build
   - LAST_TAG=`git describe --abbrev=0` || LAST_TAG="develop"; echo $LAST_TAG
   - DEPLOY_VERSION=${LAST_TAG//.}
 deploy:
