@@ -12,9 +12,6 @@
   "bugs": {
     "url": "https://github.com/GDGSpain/gdg.es/issues"
   },
-  "scripts": {
-    "lint": "gulp lint"
-  },
   "devDependencies": {
     "del": "^2.2.0",
     "eslint-plugin-html": "^1.5.0",

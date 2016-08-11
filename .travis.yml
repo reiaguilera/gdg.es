@@ -14,7 +14,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - sleep 3
   - npm install -g bower
-  - bower install
+  - npm install && bower install
   - gulp lint
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_7ef9aab2215d_key -iv $encrypted_7ef9aab2215d_iv
