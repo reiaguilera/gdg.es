@@ -25,6 +25,7 @@
   "globals": {
     "Polymer": false,
     "global": false,
+    "process": false,
     "require": false
   }
 }
