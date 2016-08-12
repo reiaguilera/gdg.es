@@ -7,7 +7,6 @@
 'use strict';
 
 const path = require('path');
-const process = require('process');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 
