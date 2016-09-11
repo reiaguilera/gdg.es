@@ -63,7 +63,13 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     </style>
 
     <ul id="list" class="groups-list">
-      <template id="groups" is="dom-repeat" items="[[groups]]" as="group" on-dom-change="_domChanged" filter="_isSearch">
+      <template
+          id="groups"
+          is="dom-repeat"
+          items="[[groups]]"
+          as="group"
+          on-dom-change="_domChanged"
+          filter="{{_computeFilter(filterGroups)}}">
         <li>
           <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
         </li>
@@ -80,17 +86,13 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           type: Array
         },
 
-        searchGroup: {
+        filterGroups: {
           type: String
         }
       },
 
       behaviors: [
         Polymer.GDGSpainCascadedAnimation
-      ],
-
-      observers: [
-        '_updateSearchFilter(searchGroup)'
       ],
 
       _domChanged: function() {
@@ -101,18 +103,16 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         }
       },
 
-      _isSearch: function(group) {
-        var groupName = group.name.toLowerCase();
-
-        if (groupName.indexOf(this.searchGroup.toLowerCase()) === -1 ) {
-          return false;
+      _computeFilter: function(searchText) {
+        if (!searchText) {
+          return null;
         } else {
-          return group;
-        }
-      },
+          return function(group) {
+            var groupName = group.name.toLowerCase();
 
-      _updateSearchFilter: function() {
-        this.$.groups.render();
+            return groupName.indexOf(searchText.toLowerCase()) !== -1;
+          };
+        }
       }
     });
   </script>

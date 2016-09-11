@@ -46,11 +46,13 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
     <header>
       <h1>Grupos</h1>
-      <paper-input label="Buscar" type="text" value="{{searchGroup}}" autofocus></paper-input>
+      <paper-input label="Buscar" type="text" value="{{inputText}}" autofocus></paper-input>
     </header>
 
     <div id="transformedContent">
-      <gdgspain-groups-list groups="[[persistedGroups]]" search-group="{{searchGroup}}"></gdgspain-groups-list>
+      <gdgspain-groups-list
+          groups="[[persistedGroups]]"
+          filter-groups="{{inputText}}"></gdgspain-groups-list>
     </div>
   </template>
 
@@ -62,10 +64,6 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         visible: {
           type: Boolean,
           observer: '_visibleChanged'
-        },
-
-        searchGroup: {
-          type: String
         }
       },
 
