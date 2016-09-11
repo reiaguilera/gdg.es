@@ -7,6 +7,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../../bower_components/polymerfire/firebase-query.html">
 <link rel="import" href="../../gdgspain-animate-page.html">
 <link rel="import" href="../../gdgspain-shared-styles.html">
@@ -19,6 +20,16 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         @apply(--page-content);
 
         display: block;
+      }
+
+      header {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+      }
+
+      h1 {
+        @apply(--layout);
+        @apply(--layout-flex);
       }
     </style>
 
@@ -33,10 +44,15 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         persisted-data="{{persistedGroups}}">
     </app-indexeddb-mirror>
 
-    <h1>Grupos</h1>
+    <header>
+      <h1>Grupos</h1>
+      <paper-input label="Buscar" type="text" value="{{inputText}}" autofocus></paper-input>
+    </header>
 
     <div id="transformedContent">
-      <gdgspain-groups-list groups="[[persistedGroups]]"></gdgspain-groups-list>
+      <gdgspain-groups-list
+          groups="[[persistedGroups]]"
+          filter-groups="{{inputText}}"></gdgspain-groups-list>
     </div>
   </template>
 
