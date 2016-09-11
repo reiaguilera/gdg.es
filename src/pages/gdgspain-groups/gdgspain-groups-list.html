@@ -80,7 +80,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           type: Array
         },
         searchGroup:{
-         type: String
+          type: String
         }
       },
 
@@ -98,10 +98,10 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           this.playAnimation('entry');
         }
       },
-      _isSearch: function(group){
+      _isSearch: function(group) {
         var groupName = group.name.toLowerCase();
         console.l
-        if (groupName.indexOf(this.searchGroup.toLowerCase()) === -1 ){ 
+        if (groupName.indexOf(this.searchGroup.toLowerCase()) === -1 ) { 
           return false;
         } else {
           return group;
