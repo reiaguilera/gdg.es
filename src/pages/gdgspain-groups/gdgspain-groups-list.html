@@ -79,7 +79,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         groups: {
           type: Array
         },
-        searchGroup:{
+
+        searchGroup: {
           type: String
         }
       },
@@ -87,6 +88,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       behaviors: [
         Polymer.GDGSpainCascadedAnimation
       ],
+
       observers: [
         '_updateSearchFilter(searchGroup)'
       ],
@@ -98,18 +100,19 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           this.playAnimation('entry');
         }
       },
+
       _isSearch: function(group) {
         var groupName = group.name.toLowerCase();
-        console.l
-        if (groupName.indexOf(this.searchGroup.toLowerCase()) === -1 ) { 
+
+        if (groupName.indexOf(this.searchGroup.toLowerCase()) === -1 ) {
           return false;
         } else {
           return group;
-        }      
+        }
       },
+
       _updateSearchFilter: function() {
         this.$.groups.render();
-
       }
     });
   </script>
