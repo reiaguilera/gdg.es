@@ -22,11 +22,14 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         display: block;
       }
 
-      .search-group {
-        float: right;
+      header {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+      }
 
-        width: 30%;
-        margin-top: 2%;
+      h1 {
+        @apply(--layout);
+        @apply(--layout-flex);
       }
     </style>
 
@@ -41,9 +44,10 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         persisted-data="{{persistedGroups}}">
     </app-indexeddb-mirror>
 
-    <paper-input class="search-group" label="Buscar grupo" type="text" value="{{searchGroup}}"></paper-input>
-
-    <h1>Grupos</h1>
+    <header>
+      <h1>Grupos</h1>
+      <paper-input label="Buscar" type="text" value="{{searchGroup}}" autofocus></paper-input>
+    </header>
 
     <div id="transformedContent">
       <gdgspain-groups-list groups="[[persistedGroups]]" search-group="{{searchGroup}}"></gdgspain-groups-list>
