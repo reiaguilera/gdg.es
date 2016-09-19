@@ -5,12 +5,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../gdgspain-cascaded-animation.html">
-<link rel="import" href="gdgspain-event-item.html">
+<link rel="import" href="../../app-shared-elements/gdgspain-cascaded-animation.html">
+<link rel="import" href="event-item.html">
 
-<dom-module id="gdgspain-events-list">
+<dom-module id="page-events-list">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         display: block;
       }
@@ -32,7 +32,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <ul id="list" class="events-list">
       <template is="dom-repeat" items="[[events]]" as="event" on-dom-change="_domChanged">
         <li>
-          <gdgspain-event-item event="[[event]]"></gdgspain-event-item>
+          <event-item event="[[event]]"></event-item>
         </li>
       </template>
     </ul>
@@ -40,7 +40,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-events-list',
+      is: 'page-events-list',
 
       properties: {
         events: {

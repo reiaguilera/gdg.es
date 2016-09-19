@@ -2,23 +2,23 @@
   "entrypoint": "index.html",
   "shell": "src/gdgspain-app.html",
   "fragments": [
-    "src/pages/gdgspain-404/gdgspain-404.html",
-    "src/pages/gdgspain-branding/gdgspain-branding.html",
-    "src/pages/gdgspain-events/gdgspain-events.html",
-    "src/pages/gdgspain-groups/gdgspain-groups.html",
-    "src/pages/gdgspain-home/gdgspain-home.html"
+    "src/pages/404/page-404.html",
+    "src/pages/branding/page-branding.html",
+    "src/pages/events/page-events.html",
+    "src/pages/groups/page-groups.html",
+    "src/pages/home/page-home.html"
   ],
   "sourceGlobs": [
     "data/**/*",
     "images/**/*",
     "scripts/**/*",
     "src/**/*",
-    "app.yaml",
-    "bower.json",
-    "LICENSE.txt",
-    "manifest.json"
+    "bower.json"
   ],
   "includeDependencies": [
-    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js",
+    "app.yaml",
+    "LICENSE.txt",
+    "manifest.json"
   ]
 }

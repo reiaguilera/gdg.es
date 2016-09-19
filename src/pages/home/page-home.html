@@ -6,12 +6,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../gdgspain-animate-page.html">
-<link rel="import" href="../../gdgspain-shared-styles.html">
+<link rel="import" href="../../app-shared-elements/gdgspain-animate-page.html">
+<link rel="import" href="../../app-shared-styles.html">
 
-<dom-module id="gdgspain-home">
+<dom-module id="page-home">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         display: block;
       }
@@ -197,42 +197,42 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
                 target="_blank"
                 title="Seguir @GDG_ES en Twitter"
                 aria-label="Seguir GDG Spain en Twitter">
-              <iron-icon icon="gdgspain-icons:twitter"></iron-icon>
+              <iron-icon icon="twitter"></iron-icon>
               <span>@GDG_ES</span>
             </a>
             <a href="https://github.com/GDGSpain"
                 target="_blank"
                 title="Seguir /GDGSpain en GitHub"
                 aria-label="Seguir GDG Spain en GitHub">
-              <iron-icon icon="gdgspain-icons:github"></iron-icon>
+              <iron-icon icon="github"></iron-icon>
               <span>/GDGSpain</span>
             </a>
             <a href="https://www.youtube.com/c/GDGSpain"
                 target="_blank"
                 title="Suscribirse /GDGSpain en YouTube"
                 aria-label="Suscribirse GDG Spain en YouTube">
-              <iron-icon icon="gdgspain-icons:youtube"></iron-icon>
+              <iron-icon icon="youtube"></iron-icon>
               <span>/GDGSpain</span>
             </a>
             <a href="https://www.facebook.com/GDGSpain"
                 target="_blank"
                 title="Seguir /GDGSpain en Facebook"
                 aria-label="Seguir GDG Spain en Facebook">
-              <iron-icon icon="gdgspain-icons:facebook"></iron-icon>
+              <iron-icon icon="facebook"></iron-icon>
               <span>/GDGSpain</span>
             </a>
             <a href="https://instagram.com/GDGSpain"
                 target="_blank"
                 title="Seguir /GDGSpain en Instagram"
                 aria-label="Seguir GDG Spain en Instagram">
-              <iron-icon icon="gdgspain-icons:instagram"></iron-icon>
+              <iron-icon icon="instagram"></iron-icon>
               <span>/GDGSpain</span>
             </a>
             <a href="https://plus.google.com/+GDGSpain"
                 target="_blank"
                 title="Seguir +GDGSpain en Google+"
                 aria-label="Seguir GDG Spain en Google+">
-              <iron-icon icon="gdgspain-icons:googlePlus"></iron-icon>
+              <iron-icon icon="googlePlus"></iron-icon>
               <span>GDGSpain</span>
             </a>
           </div>
@@ -246,7 +246,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-home',
+      is: 'page-home',
 
       properties: {
         smallScreen: {

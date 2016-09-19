@@ -9,12 +9,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../../bower_components/paper-input/paper-input.html">
-<link rel="import" href="../../gdgspain-animate-page.html">
-<link rel="import" href="../../gdgspain-shared-styles.html">
+<link rel="import" href="../../app-shared-elements/gdgspain-animate-page.html">
+<link rel="import" href="../../app-shared-styles.html">
 
-<dom-module id="gdgspain-branding">
+<dom-module id="page-branding">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         @apply(--page-content);
 
@@ -104,7 +104,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-branding',
+      is: 'page-branding',
 
       properties: {
         visible: {

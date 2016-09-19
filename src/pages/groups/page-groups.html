@@ -9,13 +9,13 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../../bower_components/polymerfire/firebase-query.html">
-<link rel="import" href="../../gdgspain-animate-page.html">
-<link rel="import" href="../../gdgspain-shared-styles.html">
-<link rel="import" href="gdgspain-groups-list.html">
+<link rel="import" href="../../app-shared-elements/gdgspain-animate-page.html">
+<link rel="import" href="../../app-shared-styles.html">
+<link rel="import" href="page-groups-list.html">
 
-<dom-module id="gdgspain-groups">
+<dom-module id="page-groups">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         @apply(--page-content);
 
@@ -50,15 +50,15 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     </header>
 
     <div id="transformedContent">
-      <gdgspain-groups-list
+      <page-groups-list
           groups="[[persistedGroups]]"
-          filter-groups="{{inputText}}"></gdgspain-groups-list>
+          filter-groups="{{inputText}}"></page-groups-list>
     </div>
   </template>
 
   <script>
     Polymer({
-      is: 'gdgspain-groups',
+      is: 'page-groups',
 
       properties: {
         visible: {

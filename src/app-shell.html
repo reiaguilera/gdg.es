@@ -20,12 +20,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
-<link rel="import" href="gdgspain-icons.html">
-<link rel="import" href="gdgspain-shared-styles.html">
+<link rel="import" href="app-icons.html">
+<link rel="import" href="app-shared-styles.html">
 
-<dom-module id="gdgspain-app">
+<dom-module id="app-shell">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         display: block;
       }
@@ -154,7 +154,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       <app-header condenses reveals effects="waterfall" role="navigation">
         <app-toolbar>
           <paper-icon-button
-              icon="gdgspain-icons:menu"
+              icon="menu"
               class="menu-button"
               on-tap="_toggleDrawer"
               hidden$="[[!smallScreen]]"
@@ -196,11 +196,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           attr-for-selected="name"
           selected-attribute="visible"
           fallback-selection="404">
-        <gdgspain-home name="home" small-screen="{{smallScreen}}"></gdgspain-home>
-        <gdgspain-groups name="groups"></gdgspain-groups>
-        <gdgspain-events name="events"></gdgspain-events>
-        <gdgspain-branding name="branding"></gdgspain-branding>
-        <gdgspain-404 name="404"></gdgspain-404>
+        <page-home name="home" small-screen="{{smallScreen}}"></page-home>
+        <page-groups name="groups"></page-groups>
+        <page-events name="events"></page-events>
+        <page-branding name="branding"></page-branding>
+        <page-404 name="404"></page-404>
       </neon-animated-pages>
     </app-header-layout>
 
@@ -226,7 +226,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-app',
+      is: 'app-shell',
 
       properties: {
         selectedPage: {
@@ -265,8 +265,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       },
 
       _selectedPageChanged: function(selectedPage) {
-        var elementId = 'gdgspain-' + selectedPage;
-        var filePath = 'pages/' + elementId + '/' + elementId + '.html';
+        var filePath = 'pages/' + selectedPage + '/page-' + selectedPage + '.html';
         var resolvedPageUrl = this.resolveUrl(filePath);
 
         this.importHref(resolvedPageUrl, null, this._showPage404, true);

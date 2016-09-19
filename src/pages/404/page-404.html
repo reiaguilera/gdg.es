@@ -5,12 +5,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../gdgspain-animate-page.html">
-<link rel="import" href="../../gdgspain-shared-styles.html">
+<link rel="import" href="../../app-shared-elements/gdgspain-animate-page.html">
+<link rel="import" href="../../app-shared-styles.html">
 
-<dom-module id="gdgspain-404">
+<dom-module id="page-404">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         @apply(--page-content);
 
@@ -27,7 +27,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-404',
+      is: 'page-404',
 
       behaviors: [
         Polymer.GDGSpainAnimatePage

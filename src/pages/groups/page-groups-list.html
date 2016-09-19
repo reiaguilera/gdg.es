@@ -6,12 +6,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../gdgspain-cascaded-animation.html">
-<link rel="import" href="gdgspain-group-item.html">
+<link rel="import" href="../../app-shared-elements/gdgspain-cascaded-animation.html">
+<link rel="import" href="group-item.html">
 
-<dom-module id="gdgspain-groups-list">
+<dom-module id="page-groups-list">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         display: block;
       }
@@ -71,7 +71,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           on-dom-change="_domChanged"
           filter="{{_computeFilter(filterGroups)}}">
         <li>
-          <gdgspain-group-item group="[[group]]"></gdgspain-group-item>
+          <group-item group="[[group]]"></group-item>
         </li>
       </template>
     </ul>
@@ -79,7 +79,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-groups-list',
+      is: 'page-groups-list',
 
       properties: {
         groups: {
