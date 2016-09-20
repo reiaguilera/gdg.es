@@ -1,0 +1,83 @@
+<!--
+@license
+Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
+This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
+-->
+
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/polymerfire/firebase-query.html">
+<link rel="import" href="../../app-shared-elements/gdgspain-animate-page.html">
+<link rel="import" href="../../app-shared-styles.html">
+<link rel="import" href="page-groups-list.html">
+
+<dom-module id="page-groups">
+  <template>
+    <style include="app-shared-styles">
+      :host {
+        @apply(--page-content);
+
+        display: block;
+      }
+
+      header {
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
+      }
+
+      h1 {
+        @apply(--layout);
+        @apply(--layout-flex);
+      }
+    </style>
+
+    <firebase-query
+        path="/groups"
+        data="{{groups}}">
+    </firebase-query>
+
+    <app-indexeddb-mirror
+        key="groups"
+        data="{{groups}}"
+        persisted-data="{{persistedGroups}}">
+    </app-indexeddb-mirror>
+
+    <header>
+      <h1>Grupos</h1>
+      <paper-input label="Buscar" type="text" value="{{inputText}}" autofocus></paper-input>
+    </header>
+
+    <div id="transformedContent">
+      <page-groups-list
+          groups="[[persistedGroups]]"
+          filter-groups="{{inputText}}"></page-groups-list>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'page-groups',
+
+      properties: {
+        visible: {
+          type: Boolean,
+          observer: '_visibleChanged'
+        }
+      },
+
+      behaviors: [
+        Polymer.GDGSpainAnimatePage
+      ],
+
+      _visibleChanged: function(visible) {
+        if (visible) {
+          this.fire('change-section', {
+            title: 'Grupos - GDG Spain'
+          });
+        }
+      }
+    });
+  </script>
+</dom-module>

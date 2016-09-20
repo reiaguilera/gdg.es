@@ -4,13 +4,13 @@ Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
 This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
 -->
 
-<link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="gdgspain-icons.html">
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../app-icons.html">
 
-<dom-module id="gdgspain-group-item">
+<dom-module id="group-item">
   <template>
     <style>
       :host {
@@ -63,7 +63,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
                 title$="[[group.name]] en Google+"
                 aria-label$="[[group.name]] en Google+">
               <paper-icon-button
-                  icon="gdgspain-icons:googlePlus"
+                  icon="googlePlus"
                   hidden$="[[!group.googlePlus]]"></paper-icon-button>
             </a>
           </template>
@@ -73,7 +73,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
                 title$="[[group.name]] en Meetup"
                 aria-label$="[[group.name]] en Meetup">
               <paper-icon-button
-                  icon="gdgspain-icons:meetup"
+                  icon="meetup"
                   hidden$="[[!group.meetup]]"></paper-icon-button>
             </a>
           </template>
@@ -83,7 +83,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
                 title$="[[group.name]] en Twitter"
                 aria-label$="[[group.name]] en Twitter">
               <paper-icon-button
-                  icon="gdgspain-icons:twitter"
+                  icon="twitter"
                   hidden$="[[!group.twitter]]"></paper-icon-button>
             </a>
           </template>
@@ -93,7 +93,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
                 title$="[[group.name]] en Facebook"
                 aria-label$="[[group.name]] en Facebook">
               <paper-icon-button
-                  icon="gdgspain-icons:facebook"
+                  icon="facebook"
                   hidden$="[[!group.facebook]]"></paper-icon-button>
             </a>
           </template>
@@ -104,7 +104,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-group-item',
+      is: 'group-item',
 
       properties: {
         group: {

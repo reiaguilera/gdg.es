@@ -20,12 +20,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
-<link rel="import" href="gdgspain-icons.html">
-<link rel="import" href="gdgspain-shared-styles.html">
+<link rel="import" href="app-icons.html">
+<link rel="import" href="app-shared-styles.html">
 
-<dom-module id="gdgspain-app">
+<dom-module id="app-shell">
   <template>
-    <style include="gdgspain-shared-styles">
+    <style include="app-shared-styles">
       :host {
         display: block;
       }
@@ -136,9 +136,14 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     </style>
 
     <app-location route="{{route}}"></app-location>
-    <app-route route="{{route}}" pattern="/:page" data="{{routeData}}"></app-route>
+    <app-route
+        route="{{route}}"
+        pattern="/:pageName"
+        data="{{routeData}}"></app-route>
 
-    <iron-media-query query="max-width: 625px" query-matches="{{smallScreen}}"></iron-media-query>
+    <iron-media-query
+        query="max-width: 625px"
+        query-matches="{{smallScreen}}"></iron-media-query>
 
     <firebase-app
         auth-domain="gdg-es.firebaseapp.com"
@@ -149,7 +154,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       <app-header condenses reveals effects="waterfall" role="navigation">
         <app-toolbar>
           <paper-icon-button
-              icon="gdgspain-icons:menu"
+              icon="menu"
               class="menu-button"
               on-tap="_toggleDrawer"
               hidden$="[[!smallScreen]]"
@@ -157,13 +162,13 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
           <div class="logo-container">
             <a href="/" aria-label="GDG Spain home">
-              <iron-image src="/images/gdgspain-logo.png" preload sizing="cover"></iron-image>
+              <iron-image src="../images/gdgspain-logo.png" preload sizing="cover"></iron-image>
             </a>
           </div>
 
           <template is="dom-if" if="[[!smallScreen]]">
             <paper-tabs
-                selected="[[page]]"
+                selected="[[selectedPage]]"
                 attr-for-selected="name"
                 class="main-menu">
               <paper-tab name="home" link tabindex="-1">
@@ -187,15 +192,15 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       </app-header>
 
       <neon-animated-pages
-          selected="[[page]]"
+          selected="[[selectedPage]]"
           attr-for-selected="name"
           selected-attribute="visible"
           fallback-selection="404">
-        <gdgspain-home name="home" small-screen="{{smallScreen}}"></gdgspain-home>
-        <gdgspain-groups name="groups"></gdgspain-groups>
-        <gdgspain-events name="events"></gdgspain-events>
-        <gdgspain-branding name="branding"></gdgspain-branding>
-        <gdgspain-404 name="404"></gdgspain-404>
+        <page-home name="home" small-screen="{{smallScreen}}"></page-home>
+        <page-groups name="groups"></page-groups>
+        <page-events name="events"></page-events>
+        <page-branding name="branding"></page-branding>
+        <page-404 name="404"></page-404>
       </neon-animated-pages>
     </app-header-layout>
 
@@ -204,7 +209,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         <div class="app-drawer-scrollable">
           <app-toolbar class="drawer-toolbar"></app-toolbar>
           <iron-selector
-              selected="[[page]]"
+              selected="[[selectedPage]]"
               attr-for-selected="name"
               class="drawer-menu"
               role="navigation">
@@ -221,32 +226,31 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
   <script>
     Polymer({
-      is: 'gdgspain-app',
+      is: 'app-shell',
 
       properties: {
-        page: {
+        selectedPage: {
           type: String,
-          observer: '_pageChanged'
+          reflectToAttribute: true,
+          observer: '_selectedPageChanged'
         },
 
-        pagesNames: {
-          type: Array,
-          value: function() {
-            return ['home', 'groups', 'events', 'branding'];
-          }
+        defaultSelectedPage: {
+          type: String,
+          value: 'home'
         }
       },
 
       observers: [
-        '_routePageChanged(routeData.page)'
+        '_routePageChanged(routeData.pageName)'
       ],
 
       listeners: {
         'change-section': '_onChangeSection'
       },
 
-      _routePageChanged: function(page) {
-        this.page = page || 'home';
+      _routePageChanged: function(pageName) {
+        this.selectedPage = pageName || this.defaultSelectedPage;
 
         // Scroll to the top of the page on every *route* change. Use `Polymer.AppLayout.scroll`
         // with `behavior: 'silent'` to disable header scroll effects during the scroll.
@@ -260,14 +264,15 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         return this.pagesNames.indexOf(page) === -1;
       },
 
-      _pageChanged: function(page) {
-        if (this._pageDoesNotExist(page)) {
-          page = '404';
-        }
+      _selectedPageChanged: function(selectedPage) {
+        var filePath = 'pages/' + selectedPage + '/page-' + selectedPage + '.html';
+        var resolvedPageUrl = this.resolveUrl(filePath);
 
-        var resolvedPageUrl = this.resolveUrl('pages/gdgspain-' + page + '.html');
+        this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      },
 
-        this.importHref(resolvedPageUrl, null, null, true);
+      _showPage404: function() {
+        this.selectedPage = '404';
       },
 
       _toggleDrawer: function() {
