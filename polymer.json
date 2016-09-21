@@ -17,8 +17,8 @@
   ],
   "includeDependencies": [
     "bower_components/webcomponentsjs/webcomponents-lite.min.js",
-    "app.yaml",
     "LICENSE.txt",
+    "app.yaml",
     "manifest.json"
   ]
 }
