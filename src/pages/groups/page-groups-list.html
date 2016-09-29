@@ -5,31 +5,30 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 -->
 
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/app-layout/app-grid/app-grid-style.html">
 <link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../../app-shared-elements/gdgspain-cascaded-animation.html">
 <link rel="import" href="group-item.html">
 
 <dom-module id="page-groups-list">
   <template>
-    <style include="app-shared-styles">
+    <style include="app-grid-style">
       :host {
+        --app-grid-columns: 1;
+        --app-grid-gutter: var(--margin-size);
+
         display: block;
       }
 
       .groups-list {
-        @apply(--layout-horizontal);
-        @apply(--layout-wrap);
-        @apply(--layout-justified);
-
+        margin-right: -var(--app-grid-gutter);
+        margin-bottom: -var(--app-grid-gutter);
         padding: 0;
 
         list-style: none;
       }
 
       .groups-list li {
-        width: 100%;
-        margin-bottom: 20px;
-
         will-change: transform;
       }
 
@@ -39,30 +38,20 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         text-decoration: none;
       }
 
-      @media (min-width: 425px) {
-        .groups-list li {
-          @apply(--layout-flex-auto);
-
-          max-width: 48%;
-          margin-bottom: 4%;
-
-          -webkit-flex-basis: 48%;
-          flex-basis: 48%;
+      @media (min-width: 500px) {
+        :host {
+          --app-grid-columns: 2;
         }
       }
 
-      @media (min-width: 625px) {
-        .groups-list li {
-          max-width: 32%;
-          margin-bottom: 2%;
-
-          -webkit-flex-basis: 32%;
-          flex-basis: 32%;
+      @media (min-width: 750px) {
+        :host {
+          --app-grid-columns: 3;
         }
       }
     </style>
 
-    <ul id="list" class="groups-list">
+    <ul id="list" class="groups-list app-grid">
       <template
           id="groups"
           is="dom-repeat"
@@ -113,6 +102,18 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
             return groupName.indexOf(searchText.toLowerCase()) !== -1;
           };
         }
+      },
+
+      attached: function() {
+        this._updateGridStyles = this._updateGridStyles || function() {
+          this.updateStyles();
+        }.bind(this);
+
+        window.addEventListener('resize', this._updateGridStyles);
+      },
+
+      detached: function() {
+        window.removeEventListener('resize', this._updateGridStyles);
       }
     });
   </script>
