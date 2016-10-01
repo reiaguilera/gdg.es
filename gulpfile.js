@@ -25,7 +25,6 @@ global.config = {
     staticFileGlobs: [
       '/bower_components/webcomponentsjs/webcomponents-lite.min.js',
       '/images/**/*',
-      '/scripts/**/*',
       '/index.html',
       '/manifest.json'
     ],
@@ -45,8 +44,6 @@ global.config = {
     ]
   },
   filesToLint: [
-    'scripts/**/*.js',
-    '!scripts/google-analytics.js',
     'src/**/*.{js,html}',
     'test/**/*.{js,html}',
     'gulpfile.js',
