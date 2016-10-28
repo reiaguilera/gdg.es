@@ -65,6 +65,16 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
                   hidden$="[[!group.googlePlus]]"></paper-icon-button>
             </a>
           </template>
+          <template is="dom-if" if="[[group.web]]">
+            <a href$="[[group.web]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.web]]"
+                aria-label$="[[group.web]]">
+              <paper-icon-button
+                  icon="http"
+                  hidden$="[[!group.web]]"></paper-icon-button>
+            </a>
+          </template>
           <template is="dom-if" if="[[group.meetup]]">
             <a href$="[[group.meetup]]" target="_blank"
                 tabindex="-1"
