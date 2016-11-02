@@ -17,6 +17,7 @@
   "includeDependencies": [
     "bower_components/webcomponentsjs/webcomponents-lite.min.js",
     "LICENSE.txt",
-    "manifest.json"
+    "manifest.json",
+    "polymer.json"
   ]
 }
