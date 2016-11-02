@@ -11,14 +11,12 @@
   "sourceGlobs": [
     "data/**/*",
     "images/**/*",
-    "scripts/**/*",
     "src/**/*",
     "bower.json"
   ],
   "includeDependencies": [
     "bower_components/webcomponentsjs/webcomponents-lite.min.js",
     "LICENSE.txt",
-    "app.yaml",
     "manifest.json"
   ]
 }
