@@ -254,7 +254,10 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
         // Scroll to the top of the page on every *route* change. Use `Polymer.AppLayout.scroll`
         // with `behavior: 'silent'` to disable header scroll effects during the scroll.
-        Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
+        Polymer.AppLayout.scroll({
+          top: 0,
+          behavior: 'silent'
+        });
 
         // Close the drawer - in case the route change came from a link in the drawer.
         this.drawerOpened = false;

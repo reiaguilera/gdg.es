@@ -46,7 +46,7 @@ global.config = {
 };
 
 const clean = require('./gulp-tasks/clean.js');
-const html = require('./gulp-tasks/html.js');
+// const html = require('./gulp-tasks/html.js');
 const images = require('./gulp-tasks/images.js');
 const javascript = require('./gulp-tasks/javascript.js');
 const lint = require('./gulp-tasks/lint.js');
@@ -56,7 +56,7 @@ function source() {
   return project.splitSource()
     .pipe(gulpif('**/*.{png,gif,jpg,svg}', images.minify()))
     .pipe(gulpif('**/*.js', javascript.minify()))
-    .pipe(gulpif('**/*.html', html.minify()))
+    // .pipe(gulpif('**/*.html', html.minify()))
     .pipe(project.rejoin());
 }
 
