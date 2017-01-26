@@ -8,17 +8,15 @@
     "src/pages/groups/page-groups.html",
     "src/pages/home/page-home.html"
   ],
-  "sourceGlobs": [
+  "sources": [
     "data/**/*",
     "images/**/*",
-    "scripts/**/*",
     "src/**/*",
     "bower.json"
   ],
-  "includeDependencies": [
+  "extraDependencies": [
     "bower_components/webcomponentsjs/webcomponents-lite.min.js",
     "LICENSE.txt",
-    "app.yaml",
     "manifest.json"
   ]
 }

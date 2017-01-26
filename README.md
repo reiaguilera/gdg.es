@@ -1,52 +1,53 @@
-# [gdg.es](https://gdg.es) [![Build status](https://travis-ci.org/GDGSpain/gdg.es.svg?branch=develop)](https://travis-ci.org/GDGSpain/gdg.es)
+[![Build status][travis-image]][travis-url]
 
-The GDG Spain official website
+# [gdg.es](https://gdg.es)
 
-### Setup
+The GDG Spain official website.
 
-To work on the GDG Spain website, clone the repository.
+Deployed in Firebase with Travis CI.
 
-#### Prerequisites
+## Prerequisites
 
-Install [polymer-cli](https://github.com/Polymer/polymer-cli):
+First, install [Polymer CLI](https://github.com/Polymer/polymer-cli) using
+[npm](https://www.npmjs.com) (we assume you have pre-installed [node.js](https://nodejs.org)).
 
-```
-npm install -g polymer-cli
-```
+    npm install -g polymer-cli
 
-#### Install dependencies
+And install the dependencies:
 
-```
-npm install && bower install
-```
+    npm install && bower install
 
-#### Start the development server
+## Start the development server
 
 This command serves the app at `http://localhost:8080` and provides basic URL
 routing for the app:
 
-```
-polymer serve
-```
+    polymer serve --open
 
-#### Build
+## Build
 
-This command performs HTML, CSS, and JS minification on the application
-dependencies, and generates a `service-worker.js` file with code to pre-cache
-the dependencies based on the entrypoint and fragments specified in
-`polymer.json`. The minified files are output to the `build/unbundled` folder,
-and are suitable for serving from a HTTP/2+Push compatible server.
+The included `gulpfile.js` relies on [the `polymer-build` library](https://github.com/Polymer/polymer-build),
+the same library that powers Polymer CLI. Out of the box it will clean the
+`build` directory, and provide image minification. Follow the comments in the
+`gulpfile.js` to add additional steps like JS transpilers or CSS preprocessors.
 
-In addition the command also creates a fallback `build/bundled` folder,
-generated using fragment bundling, suitable for serving from non
-H2/push-compatible servers or to clients that do not support H2/Push.
+Also, generates a service-worker.js file with code to pre-cache the dependencies
+based on the entrypoint and fragments specified in `polymer.json`.
 
-```
-gulp build
-```
+    npm run build
 
-### License
+## Preview the build
 
-Copyright (c) 2016 GDG Spain
+This command serves the minified version of the app at `http://localhost:8080`:
 
-This code may only be used under the MIT style license found at [LICENSE.txt](LICENSE.txt)
+    polymer serve build/
+
+## Run tests
+
+This command will run [Web Component Tester](https://github.com/Polymer/web-component-tester)
+against the browsers currently installed on your machine:
+
+    polymer test
+
+[travis-image]: https://travis-ci.org/GDGSpain/gdg.es.svg?branch=master
+[travis-url]: https://travis-ci.org/GDGSpain/gdg.es

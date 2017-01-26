@@ -1,33 +1,10 @@
 {
-  "extends": "eslint:recommended",
-  "rules": {
-    "brace-style": "error",
-    "comma-spacing": ["error", {"before": false, "after": true}],
-    "indent": ["error", 2],
-    "key-spacing": ["error"],
-    "keyword-spacing": "error",
-    "no-console": ["warn", {"allow": ["info"]}],
-    "no-multi-spaces": "error",
-    "quotes": ["error", "single", "avoid-escape"],
-    "space-before-blocks": "error",
-    "space-before-function-paren": ["error", "never"],
-    "space-in-parens": ["error", "never"]
-  },
+  "extends": "ibmresearch/html",
   "env": {
-    "browser": true,
-    "es6": true
-  },
-  "plugins": [
-    "html"
-  ],
-  "settings": {
-    "html/indent": "+2",
-    "html/report-bad-indent": 2
+    "es6": true,
+    "node": true
   },
   "globals": {
-    "Polymer": false,
-    "global": false,
-    "process": false,
-    "require": false
+    "Polymer": false
   }
 }

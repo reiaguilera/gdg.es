@@ -45,9 +45,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .logo-container {
-        @apply(--layout-horizontal);
-        @apply(--layout-flex);
-        @apply(--layout-center);
+        @apply --layout-horizontal;
+        @apply --layout-flex;
+        @apply --layout-center;
 
         height: 100%;
       }
@@ -78,8 +78,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .main-menu paper-tab a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center-center);
+        @apply --layout-horizontal;
+        @apply --layout-center-center;
 
         text-decoration: none;
         text-transform: uppercase;
@@ -102,9 +102,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .drawer-menu a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
-        @apply(--paper-font-subhead);
+        @apply --layout-horizontal;
+        @apply --layout-center;
+        @apply --paper-font-subhead;
 
         min-height: 48px;
         padding: 0px 16px;
@@ -127,7 +127,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
       @media all and (max-width: 625px) {
         .logo-container {
-          @apply(--layout-center-justified);
+          @apply --layout-center-justified;
 
           /* Add the size of the .menu-button for alignment */
           margin-right: 40px;
@@ -181,7 +181,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
                 <a href="/events">Eventos</a>
               </paper-tab>
               <paper-tab name="blog" link tabindex="-1">
-                <a href="http://blog.gdg.es">Blog</a>
+                <a href="http://blog.gdg.es" target="_blank">Blog</a>
               </paper-tab>
               <paper-tab name="branding" link tabindex="-1">
                 <a href="/branding">Branding</a>
@@ -254,7 +254,10 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
         // Scroll to the top of the page on every *route* change. Use `Polymer.AppLayout.scroll`
         // with `behavior: 'silent'` to disable header scroll effects during the scroll.
-        Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
+        Polymer.AppLayout.scroll({
+          top: 0,
+          behavior: 'silent'
+        });
 
         // Close the drawer - in case the route change came from a link in the drawer.
         this.drawerOpened = false;

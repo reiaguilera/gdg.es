@@ -21,7 +21,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         width: 100%;
 
         --paper-card-actions: {
-          @apply(--layout-horizontal-reverse);
+          @apply --layout-horizontal-reverse;
 
           border-top: none;
         };
@@ -63,6 +63,16 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
               <paper-icon-button
                   icon="googlePlus"
                   hidden$="[[!group.googlePlus]]"></paper-icon-button>
+            </a>
+          </template>
+          <template is="dom-if" if="[[group.web]]">
+            <a href$="[[group.web]]" target="_blank"
+                tabindex="-1"
+                title$="[[group.web]]"
+                aria-label$="[[group.web]]">
+              <paper-icon-button
+                  icon="http"
+                  hidden$="[[!group.web]]"></paper-icon-button>
             </a>
           </template>
           <template is="dom-if" if="[[group.meetup]]">
