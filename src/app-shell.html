@@ -45,9 +45,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .logo-container {
-        @apply(--layout-horizontal);
-        @apply(--layout-flex);
-        @apply(--layout-center);
+        @apply --layout-horizontal;
+        @apply --layout-flex;
+        @apply --layout-center;
 
         height: 100%;
       }
@@ -78,8 +78,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .main-menu paper-tab a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center-center);
+        @apply --layout-horizontal;
+        @apply --layout-center-center;
 
         text-decoration: none;
         text-transform: uppercase;
@@ -102,9 +102,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .drawer-menu a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
-        @apply(--paper-font-subhead);
+        @apply --layout-horizontal;
+        @apply --layout-center;
+        @apply --paper-font-subhead;
 
         min-height: 48px;
         padding: 0px 16px;
@@ -127,7 +127,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
       @media all and (max-width: 625px) {
         .logo-container {
-          @apply(--layout-center-justified);
+          @apply --layout-center-justified;
 
           /* Add the size of the .menu-button for alignment */
           margin-right: 40px;
