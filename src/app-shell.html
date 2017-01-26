@@ -268,7 +268,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       },
 
       _selectedPageChanged: function(selectedPage) {
-        var filePath = 'pages/' + selectedPage + '/page-' + selectedPage + '.html';
+        var filePath = 'page-' + selectedPage + '/page-' + selectedPage + '.html';
         var resolvedPageUrl = this.resolveUrl(filePath);
 
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
