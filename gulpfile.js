@@ -16,12 +16,24 @@ const imagemin = require('gulp-imagemin');
 const jsonmin = require('gulp-jsonmin');
 const mergeStream = require('merge-stream');
 const polymerBuild = require('polymer-build');
+const replace = require('gulp-replace');
 const uglify = require('gulp-uglify');
 
 const swPrecacheConfig = require('./sw-precache-config.js');
 const polymerJson = require('./polymer.json');
 const polymerProject = new polymerBuild.PolymerProject(polymerJson);
 const buildDirectory = 'build';
+
+const settings = {
+  authDomain: {
+    develop: 'gdg-es-develop.firebaseapp.com',
+    production: 'gdg-es.firebaseapp.com'
+  },
+  databaseUrl: {
+    develop: 'https://gdg-es-develop.firebaseio.com',
+    production: 'https://gdg-es.firebaseio.com'
+  }
+};
 
 /**
  * Waits for the given ReadableStream
@@ -34,6 +46,8 @@ function waitFor(stream) {
 }
 
 function build() {
+  const production = process.env.NODE_ENV === 'production';
+
   return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
     // Okay, so first thing we do is clear the build directory
     console.log(`Deleting ${buildDirectory} directory...`);
@@ -42,6 +56,14 @@ function build() {
         // Okay, now let's get your source files
         let sourcesStream = polymerProject.sources()
           .pipe(polymerProject.splitHtml())
+          .pipe(gulpif(production, replace(
+            settings.authDomain.develop,
+            settings.authDomain.production
+          )))
+          .pipe(gulpif(production, replace(
+            settings.databaseUrl.develop,
+            settings.databaseUrl.production
+          )))
           .pipe(gulpif(/\.js$/, uglify()))
           // .pipe(gulpif(/\.css$/, cssSlam()))
           .pipe(gulpif(/\.html$/, htmlmin({
