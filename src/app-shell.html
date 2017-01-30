@@ -21,11 +21,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
 <link rel="import" href="app-icons.html">
-<link rel="import" href="app-shared-styles.html">
+<link rel="import" href="app-styles.html">
 
 <dom-module id="app-shell">
   <template>
-    <style include="app-shared-styles">
+    <style include="app-styles">
       :host {
         display: block;
       }
@@ -45,9 +45,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .logo-container {
-        @apply(--layout-horizontal);
-        @apply(--layout-flex);
-        @apply(--layout-center);
+        @apply --layout-horizontal;
+        @apply --layout-flex;
+        @apply --layout-center;
 
         height: 100%;
       }
@@ -78,8 +78,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .main-menu paper-tab a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center-center);
+        @apply --layout-horizontal;
+        @apply --layout-center-center;
 
         text-decoration: none;
         text-transform: uppercase;
@@ -102,9 +102,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .drawer-menu a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
-        @apply(--paper-font-subhead);
+        @apply --layout-horizontal;
+        @apply --layout-center;
+        @apply --paper-font-subhead;
 
         min-height: 48px;
         padding: 0px 16px;
@@ -127,7 +127,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
       @media all and (max-width: 625px) {
         .logo-container {
-          @apply(--layout-center-justified);
+          @apply --layout-center-justified;
 
           /* Add the size of the .menu-button for alignment */
           margin-right: 40px;
@@ -146,8 +146,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         query-matches="{{smallScreen}}"></iron-media-query>
 
     <firebase-app
-        auth-domain="gdg-es.firebaseapp.com"
-        database-url="https://gdg-es.firebaseio.com"
+        auth-domain="gdg-es-develop.firebaseapp.com"
+        database-url="https://gdg-es-develop.firebaseio.com"
         api-key="AIzaSyAIF5ALCsCSwKZhPqIIfwSOQPRrswB1Ovc"></firebase-app>
 
     <app-header-layout>
@@ -268,7 +268,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       },
 
       _selectedPageChanged: function(selectedPage) {
-        var filePath = 'pages/' + selectedPage + '/page-' + selectedPage + '.html';
+        var filePath = 'page-' + selectedPage + '/page-' + selectedPage + '.html';
         var resolvedPageUrl = this.resolveUrl(filePath);
 
         this.importHref(resolvedPageUrl, null, this._showPage404, true);

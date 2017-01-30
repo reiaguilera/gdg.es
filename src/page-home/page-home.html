@@ -4,21 +4,21 @@ Copyright (c) 2016 The GDG Spain Authors. All rights reserved.
 This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
 -->
 
-<link rel="import" href="../../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../../app-shared-elements/gdgspain-animate-page.html">
-<link rel="import" href="../../app-shared-styles.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../app-elements/gdgspain-animate-page.html">
+<link rel="import" href="../app-styles.html">
 
 <dom-module id="page-home">
   <template>
-    <style include="app-shared-styles">
+    <style include="app-styles">
       :host {
         display: block;
       }
 
       header {
-        @apply(--layout-vertical);
-        @apply(--layout-center-center);
+        @apply --layout-vertical;
+        @apply --layout-center-center;
 
         height: calc(100vh - 64px);
         padding: 0 16px;
@@ -27,7 +27,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 
         color: white;
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                          url('../../../images/gdgspain-summit-2015.jpg');
+                          url('../../images/gdgspain-summit-2015.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -72,13 +72,13 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .section-description {
-        @apply(--layout-vertical);
-        @apply(--layout-flex);
+        @apply --layout-vertical;
+        @apply --layout-flex;
       }
 
       .gdg-logo {
-        @apply(--layout-vertical);
-        @apply(--layout-center-center);
+        @apply --layout-vertical;
+        @apply --layout-center-center;
 
         margin-top: 30px;
       }
@@ -96,9 +96,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       }
 
       .footer-media-links .section-content {
-        @apply(--layout-horizontal);
-        @apply(--layout-center);
-        @apply(--layout-center-justified);
+        @apply --layout-horizontal;
+        @apply --layout-center;
+        @apply --layout-center-justified;
       }
 
       .footer-media-links a {
@@ -145,11 +145,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         }
 
         .section-columns {
-          @apply(--layout-horizontal);
+          @apply --layout-horizontal;
         }
 
         .gdg-logo {
-          @apply(--layout);
+          @apply --layout;
 
           margin-top: 0;
           margin-left: 30px;
@@ -177,7 +177,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
               <p>Los <strong>Google Developer Groups</strong> (GDGs) son entidades sin ánimo de lucro creadas con el objetivo de mejorar la comunidad de entusiastas tecnológicos y aumentar el conocimiento y las relaciones entre las personas que se dedican a esta área.</p>
             </div>
             <div class="gdg-logo">
-              <iron-image src="../../../images/gdg-logo.png" preload></iron-image>
+              <iron-image src="../../images/gdg-logo.png" preload></iron-image>
             </div>
           </div>
           <h3>¿Qué hacemos?</h3>
