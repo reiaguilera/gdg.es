@@ -7,6 +7,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/app-layout/app-grid/app-grid-style.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-spinner/paper-spinner.html">
 <link rel="import" href="../app-elements/gdgspain-cascaded-animation.html">
 <link rel="import" href="group-item.html">
 
@@ -16,6 +17,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       :host {
         --app-grid-columns: 1;
         --app-grid-gutter: var(--margin-size);
+
+        position: relative;
 
         display: block;
       }
@@ -38,6 +41,20 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         text-decoration: none;
       }
 
+      [hidden] {
+        display: none !important;
+      }
+
+      .spinner-container{
+        @apply --layout-vertical;
+        @apply --layout-center;
+
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+      }
+
       @media (min-width: 500px) {
         :host {
           --app-grid-columns: 2;
@@ -50,6 +67,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         }
       }
     </style>
+    <div class="spinner-container">
+      <paper-spinner active="[[activeSpinner]]"></paper-spinner>
+    </div>
 
     <ul id="list" class="groups-list app-grid">
       <template
@@ -75,6 +95,11 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           type: Array
         },
 
+        activeSpinner: {
+          type: Boolean,
+          value: true
+        },
+
         filterGroups: {
           type: String
         }
@@ -89,6 +114,9 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
           var nodes = Polymer.dom(this.$.list).querySelectorAll('li');
           this.animationConfig['entry'][1].nodes = nodes;
           this.playAnimation('entry');
+          this.set('activeSpinner', false);
+        } else {
+          this.set('activeSpinner', true);
         }
       },
 
