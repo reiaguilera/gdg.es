@@ -37,7 +37,7 @@ const settings = {
 };
 
 /**
- * Waits for the given ReadableStream
+ * Waits for the given ReadableStream.
  */
 function waitFor(stream) {
   return new Promise((resolve, reject) => {
@@ -47,31 +47,44 @@ function waitFor(stream) {
 }
 
 function build() {
-  let sourcesStreamSplitter = new polymerBuild.HtmlSplitter();
-  let dependenciesStreamSplitter = new polymerBuild.HtmlSplitter();
-
   return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-    // Okay, so first thing we do is clear the build directory
+    // Let's create some inline code splitters.
+    let sourcesStreamSplitter = new polymerBuild.HtmlSplitter();
+    let dependenciesStreamSplitter = new polymerBuild.HtmlSplitter();
+
+    // Okay, so first thing we do is clear the build directory.
     console.log(`Deleting ${buildDirectory} directory...`);
     del([buildDirectory])
       .then(() => {
         // Let's start by getting your source files.
         let sourcesStream = polymerProject.sources()
-          .pipe(gulpif(production, replace(
-            settings.authDomain.develop,
-            settings.authDomain.production
-          )))
-          .pipe(gulpif(production, replace(
-            settings.databaseUrl.develop,
-            settings.databaseUrl.production
-          )))
           .pipe(gulpif(/\.(png|gif|jpg|svg)$/, imagemin()))
+
+          // The `sourcesStreamSplitter` created above can be added here to
+          // pull any inline styles and scripts out of their HTML files and
+          // into seperate CSS and JS files in the build stream.
           .pipe(sourcesStreamSplitter.split())
+
+          // Let's optimice your source files.
           .pipe(gulpif(/\.html$/, htmlmin({
             collapseWhitespace: true
           })))
           .pipe(gulpif(/\.js$/, uglify()))
           .pipe(gulpif(/\.json$/, jsonmin()))
+
+          // Let's do the some changes for production
+          .pipe(gulpif(production, replace(
+            settings.authDomain.develop,
+            settings.authDomain.production,
+            {skipBinary: true}
+          )))
+          .pipe(gulpif(production, replace(
+            settings.databaseUrl.develop,
+            settings.databaseUrl.production,
+            {skipBinary: true}
+          )))
+
+          // Rejoin your source files.
           .pipe(sourcesStreamSplitter.rejoin());
 
         // Similarly, you can get your dependencies seperately and perform any
@@ -81,13 +94,12 @@ function build() {
           // Add any dependency optimizations here.
           .pipe(dependenciesStreamSplitter.rejoin());
 
-        // Okay, now let's merge them into a single build stream
+        // Okay, now let's merge them into a single build stream.
         let buildStream = mergeStream(sourcesStream, dependenciesStream)
           .once('data', () => {
             console.log('Analyzing build dependencies...');
           });
 
-        // If you want bundling, pass the stream to polymerProject.bundler.
         // This will bundle dependencies into your fragments so you can lazy
         // load them.
         buildStream = buildStream.pipe(polymerProject.bundler);
