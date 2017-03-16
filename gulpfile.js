@@ -102,7 +102,7 @@ function build() {
 
         // This will bundle dependencies into your fragments so you can lazy
         // load them.
-        buildStream = buildStream.pipe(polymerProject.bundler);
+        buildStream = buildStream.pipe(polymerProject.bundler());
 
         // Okay, time to pipe to the build directory
         buildStream = buildStream.pipe(gulp.dest(buildDirectory));
