@@ -29,6 +29,7 @@
   },
   "scripts": {
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
+    "test:integration": "npm run build",
     "build": "gulp build",
     "build:production": "NODE_ENV=production gulp build"
   },

@@ -17,6 +17,7 @@ install:
 script:
   - yarn run lint
   # - yarn run test
+  - yarn run test:integration
 before_deploy:
   - >
     if [ $TRAVIS_BRANCH == 'master' ]; then
