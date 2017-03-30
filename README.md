@@ -1,10 +1,8 @@
-[![Build status][travis-image]][travis-url]
+# [gdg.es](https://gdg.es) [![Build Status](https://travis-ci.org/GDGSpain/gdg.es.svg?branch=master)](https://travis-ci.org/GDGSpain/gdg.es)
 
-# [gdg.es](https://gdg.es)
-
-The GDG Spain official website.
-
-Deployed in Firebase with Travis CI.
+> The GDG Spain official website.
+>
+> Deployed in Firebase with Travis CI.
 
 ## Prerequisites
 
@@ -42,6 +40,16 @@ This command serves the minified version of the app at `http://localhost:8080`:
 
     polymer serve build/
 
+
+## Run lint
+
+This command will run [ESLint](https://github.com/eslint/eslint) with the
+[IBM Research ESLint shareable config](https://github.com/IBMResearch/eslint-config-ibmresearch):
+
+```
+npm run lint
+```
+
 ## Run tests
 
 This command will run [Web Component Tester](https://github.com/Polymer/web-component-tester)
@@ -49,5 +57,11 @@ against the browsers currently installed on your machine:
 
     polymer test
 
-[travis-image]: https://travis-ci.org/GDGSpain/gdg.es.svg?branch=master
-[travis-url]: https://travis-ci.org/GDGSpain/gdg.es
+### Adding a new view
+
+You can extend the app by adding more views that will be demand-loaded
+e.g. based on the route, or to progressively render non-critical sections of the
+application. Each new demand-loaded fragment should be added to the list of
+`fragments` in the included `polymer.json` file. This will ensure those
+components and their dependencies are added to the list of pre-cached components
+and will be included in the `bundled` build.

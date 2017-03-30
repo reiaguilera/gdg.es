@@ -1,7 +1,7 @@
 {
   "name": "gdg.es",
+  "version": "0.14.0",
   "description": "The GDG Spain official website",
-  "version": "0.13.0",
   "author": "Abdón Rodríguez Davila <a@abdonrd.com> (https://abdonrd.com)",
   "homepage": "https://gdg.es",
   "license": "MIT",
@@ -25,11 +25,16 @@
     "gulp-replace": "^0.5.0",
     "gulp-uglify": "^2.0.0",
     "merge-stream": "^1.0.0",
-    "polymer-build": "^0.6.0"
+    "polymer-build": "^0.9.0"
   },
   "scripts": {
     "lint": "eslint . --ext js,html --ignore-path .gitignore",
+    "test:integration": "npm run build",
     "build": "gulp build",
     "build:production": "NODE_ENV=production gulp build"
-  }
+  },
+  "engines": {
+    "node": ">=4.0"
+  },
+  "private": true
 }
