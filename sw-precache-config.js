@@ -4,6 +4,8 @@
  * This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
  */
 
+/* eslint-env node */
+
 module.exports = {
   staticFileGlobs: [
     '/bower_components/webcomponentsjs/webcomponents-lite.min.js',

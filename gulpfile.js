@@ -4,6 +4,7 @@
  * This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
  */
 
+/* eslint-env es6, node */
 /* eslint-disable no-console */
 
 'use strict';
