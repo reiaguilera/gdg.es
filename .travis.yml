@@ -27,16 +27,16 @@ before_deploy:
     fi
 deploy:
   - provider: firebase
-    edge: true
     skip_cleanup: true
+    token:
+      secure: NvVH4QWMWT1CPDvPVPcT/Acn1mmU2WpkCg8j1rVjioDXX2aUEUVad7fKUsEXvkgOBAR1NSk5BpkhQXO6t1tt5fFrwOq60+pOe0Awy/p8BwsfMGFLOa9Kh/BDLYntqpmLrOFM37U/DIxmlPpevajFX+pNs4Iu4LkLvWR5fSce8aQBORgUyZSwvdbjgYmPmr5zEvchcV7UUBlC6g9x/KtktkvWe1jrucUeYqGcvTnG1WxRp5hB0b5pjS32MOoFhbVNL1wAJnvwZj9rO9l+E8fY2RzUA2PnYscm3oCpsAyYOTRUyscjRnVUm0exqoIz8PuLTQle4R7NVxFVNx3+pzifz0Xl5NskGkuUqumYXrCS9jeFGk1O0TaGyfvQ9s5ycKPq66L2Drpg5dyCEkPp/6UjAc2eQwsby3M40EqQnMUx5u5Wp+R+/XvSmC96loGRmEelgQY964TU1Gq74U8yhPV/IfMgFZ32SmhoOvzfpP4p99aklaDY4MBkEumGefVRQweqsDjL8TLTgD6bBvHHIcvU8Iudt5bR5sYDgf+x4JEN5jSCtNzNeLyBUkExqamAJ3xvlhVnTkBE8sjgeHh1+ovZ25oV7ozzsDS6uKMlKPfk6gYvABbBIi/tkYzQgQJwsAs0VMX29aXgwGLk8aGq+uNcWIhXNVfadl8e/KPNtkkX+pI=
     project: gdg-es-develop
-    token: $FIREBASE_TOKEN
     on:
       branch: develop
   - provider: firebase
-    edge: true
     skip_cleanup: true
+    token:
+      secure: NvVH4QWMWT1CPDvPVPcT/Acn1mmU2WpkCg8j1rVjioDXX2aUEUVad7fKUsEXvkgOBAR1NSk5BpkhQXO6t1tt5fFrwOq60+pOe0Awy/p8BwsfMGFLOa9Kh/BDLYntqpmLrOFM37U/DIxmlPpevajFX+pNs4Iu4LkLvWR5fSce8aQBORgUyZSwvdbjgYmPmr5zEvchcV7UUBlC6g9x/KtktkvWe1jrucUeYqGcvTnG1WxRp5hB0b5pjS32MOoFhbVNL1wAJnvwZj9rO9l+E8fY2RzUA2PnYscm3oCpsAyYOTRUyscjRnVUm0exqoIz8PuLTQle4R7NVxFVNx3+pzifz0Xl5NskGkuUqumYXrCS9jeFGk1O0TaGyfvQ9s5ycKPq66L2Drpg5dyCEkPp/6UjAc2eQwsby3M40EqQnMUx5u5Wp+R+/XvSmC96loGRmEelgQY964TU1Gq74U8yhPV/IfMgFZ32SmhoOvzfpP4p99aklaDY4MBkEumGefVRQweqsDjL8TLTgD6bBvHHIcvU8Iudt5bR5sYDgf+x4JEN5jSCtNzNeLyBUkExqamAJ3xvlhVnTkBE8sjgeHh1+ovZ25oV7ozzsDS6uKMlKPfk6gYvABbBIi/tkYzQgQJwsAs0VMX29aXgwGLk8aGq+uNcWIhXNVfadl8e/KPNtkkX+pI=
     project: gdg-es
-    token: $FIREBASE_TOKEN
     on:
       branch: master
