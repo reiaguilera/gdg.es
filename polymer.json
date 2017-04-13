@@ -20,5 +20,8 @@
     "bower_components/webcomponentsjs/webcomponents-lite.min.js",
     "LICENSE.txt",
     "manifest.json"
-  ]
+  ],
+  "lint": {
+    "rules": ["polymer-1"]
+  }
 }
