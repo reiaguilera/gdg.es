@@ -54,13 +54,13 @@
   version "2.0.29"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-2.0.29.tgz#5002e14f75e2d71e564281df0431c8c1b4a2a36a"
 
-"@types/node@*", "@types/node@^4.2.3":
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-4.2.4.tgz#4024bbd6e5000e9fef6db3333042112a2d82247c"
-
-"@types/node@^6.0.0", "@types/node@^6.0.41":
+"@types/node@*", "@types/node@^6.0.0", "@types/node@^6.0.41":
   version "6.0.68"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.68.tgz#0c43b6b8b9445feb86a0fbd3457e3f4bc591e66d"
+
+"@types/node@^4.2.3":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-4.2.4.tgz#4024bbd6e5000e9fef6db3333042112a2d82247c"
 
 "@types/parse5@^2.2.32", "@types/parse5@^2.2.34":
   version "2.2.34"
@@ -3088,9 +3088,9 @@ polymer-analyzer@2.0.0-alpha.34:
     strip-indent "^2.0.0"
     typescript "^2.2.0"
 
-polymer-build@^0.9.0:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/polymer-build/-/polymer-build-0.9.1.tgz#e3971aec554d42edd187e7284fc10d63c669e44e"
+polymer-build@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/polymer-build/-/polymer-build-1.0.0.tgz#ab16d78681d7a72ff17b9b215035470dab178385"
   dependencies:
     "@types/node" "^4.2.3"
     "@types/parse5" "^2.2.32"
