@@ -22,8 +22,7 @@
     "paper-styles": "PolymerElements/paper-styles#^1.1.0",
     "paper-tabs": "PolymerElements/paper-tabs#^1.7.0",
     "polymer": "Polymer/polymer#^1.7.0",
-    "polymerfire": "firebase/polymerfire#^0.10.0",
-    "web-animations-js": "web-animations/web-animations-js#2.2.2"
+    "polymerfire": "firebase/polymerfire#^0.10.0"
   },
   "resolutions": {
     "app-storage": "^1.0.0"
