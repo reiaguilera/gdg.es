@@ -82,9 +82,9 @@
     "@types/node" "*"
     "@types/vinyl" "*"
 
-"@types/vinyl@*", "@types/vinyl@^1.1.29":
-  version "1.2.30"
-  resolved "https://registry.yarnpkg.com/@types/vinyl/-/vinyl-1.2.30.tgz#9115c0c45c40c575738906be9fb4df6f5b9e5013"
+"@types/vinyl@*", "@types/vinyl@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/vinyl/-/vinyl-2.0.0.tgz#fd213bf7f4136dde21fe1895500b12c186f8c268"
   dependencies:
     "@types/node" "*"
 
@@ -200,8 +200,8 @@ arr-filter@^1.1.1:
     make-iterator "^1.0.0"
 
 arr-flatten@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/arr-flatten/-/arr-flatten-1.0.1.tgz#e5ffe54d45e19f32f216e91eb99c8ce892bb604b"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/arr-flatten/-/arr-flatten-1.0.2.tgz#1ec1e63439c54f67d6f72bb4299c3d4f73b2d996"
 
 arr-map@^2.0.0:
   version "2.0.2"
@@ -893,8 +893,8 @@ dom-urls@^1.1.0:
     urijs "^1.16.1"
 
 dom5@^2.0.0, dom5@^2.0.1, dom5@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/dom5/-/dom5-2.1.0.tgz#a7adac6724062b862a410cdbc6ca488d34772831"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/dom5/-/dom5-2.2.0.tgz#ff2358018057e8be3f30eabbc1edff10086114b9"
   dependencies:
     "@types/clone" "^0.1.29"
     "@types/node" "^6.0.0"
@@ -1083,9 +1083,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-ibmresearch@^0.5.0:
+eslint-config-ibmresearch@IBMResearch/eslint-config-ibmresearch:
   version "0.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-ibmresearch/-/eslint-config-ibmresearch-0.5.0.tgz#c1cef98c85753bf89837b9faa540072c7e7eeb89"
+  resolved "https://codeload.github.com/IBMResearch/eslint-config-ibmresearch/tar.gz/d1ae213cafd56ba82081e4b582e1a4da35371af9"
 
 eslint-plugin-html@^2.0.0:
   version "2.0.1"
@@ -1093,7 +1093,7 @@ eslint-plugin-html@^2.0.0:
   dependencies:
     htmlparser2 "^3.8.2"
 
-eslint@^3.14.0:
+eslint@^3.19.0:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.19.0.tgz#c8fc6201c7f40dd08941b87c085767386a679acc"
   dependencies:
@@ -1851,8 +1851,8 @@ homedir-polyfill@^1.0.0:
     parse-passwd "^1.0.0"
 
 hosted-git-info@^2.1.4:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.4.1.tgz#4b0445e41c004a8bd1337773a4ff790ca40318c8"
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.4.2.tgz#0076b9f46a270506ddbaaea56496897460612a67"
 
 html-comment-regex@^1.1.0:
   version "1.1.1"
@@ -3089,12 +3089,12 @@ polymer-analyzer@2.0.0-alpha.34:
     typescript "^2.2.0"
 
 polymer-build@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/polymer-build/-/polymer-build-1.0.0.tgz#ab16d78681d7a72ff17b9b215035470dab178385"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/polymer-build/-/polymer-build-1.1.0.tgz#909050868db9bc913a068ab14b96995c5201e0b5"
   dependencies:
     "@types/node" "^4.2.3"
     "@types/parse5" "^2.2.32"
-    "@types/vinyl" "^1.1.29"
+    "@types/vinyl" "^2.0.0"
     "@types/vinyl-fs" "0.0.28"
     dom5 "^2.0.1"
     multipipe "^1.0.2"
@@ -3125,8 +3125,8 @@ polymer-bundler@2.0.0-pre.11:
     source-map "^0.5.6"
 
 polymer-project-config@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/polymer-project-config/-/polymer-project-config-2.1.0.tgz#8ee3fea5bcb38ca945fa5688e6ccd751e4f942c0"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/polymer-project-config/-/polymer-project-config-2.1.1.tgz#cfda2fb2d1d443bc845cf7e6d9a6b78e2769e0ec"
   dependencies:
     "@types/node" "^6.0.41"
     jsonschema "^1.1.1"
