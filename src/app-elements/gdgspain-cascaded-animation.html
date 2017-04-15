@@ -20,23 +20,26 @@ This code may only be used under the MIT style license found at LICENSE.txt
       animationConfig: {
         value: function() {
           return {
-            entry: [{
-              name: 'fade-in-animation',
-              node: this,
-              timing: {
-                delay: 300,
-                duration: 500
+            entry: [
+              {
+                name: 'fade-in-animation',
+                node: this,
+                timing: {
+                  delay: 300,
+                  duration: 500
+                }
+              },
+              {
+                name: 'cascaded-animation',
+                animation: 'transform-animation',
+                transformFrom: 'translateY(100%)',
+                transformTo: 'none',
+                timing: {
+                  delay: 200,
+                  duration: 500
+                }
               }
-            }, {
-              name: 'cascaded-animation',
-              animation: 'transform-animation',
-              transformFrom: 'translateY(100%)',
-              transformTo: 'none',
-              timing: {
-                delay: 200,
-                duration: 500
-              }
-            }]
+            ]
           };
         }
       }
