@@ -257,14 +257,16 @@ page-groups.html and page-events.html -->
       _routePageChanged: function(pageName) {
         this.selectedPage = pageName || this.defaultSelectedPage;
 
-        // Scroll to the top of the page on every *route* change. Use `Polymer.AppLayout.scroll`
-        // with `behavior: 'silent'` to disable header scroll effects during the scroll.
+        // Scroll to the top of the page on every route change.
+        // Use `Polymer.AppLayout.scroll` with `behavior: 'silent'` to disable
+        // header scroll effects during the scroll
         Polymer.AppLayout.scroll({
           top: 0,
           behavior: 'silent'
         });
 
-        // Close the drawer - in case the route change came from a link in the drawer.
+        // Close the drawer - in case the route change came from a link in the
+        // drawer
         this.drawerOpened = false;
       },
 

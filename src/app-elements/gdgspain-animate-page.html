@@ -19,42 +19,48 @@ This code may only be used under the MIT style license found at LICENSE.txt
       animationConfig: {
         value: function() {
           return {
-            entry: [{
-              name: 'fade-in-animation',
-              node: this,
-              timing: {
-                delay: 300,
-                duration: 500
+            entry: [
+              {
+                name: 'fade-in-animation',
+                node: this,
+                timing: {
+                  delay: 300,
+                  duration: 500
+                }
+              },
+              {
+                name: 'transform-animation',
+                node: this.$.transformedContent,
+                transformOrigin: '100%',
+                transformFrom: 'translateY(30%)',
+                transformTo: 'translateY(0%)',
+                timing: {
+                  delay: 200,
+                  duration: 500
+                }
               }
-            }, {
-              name: 'transform-animation',
-              node: this.$.transformedContent,
-              transformOrigin: '100%',
-              transformFrom: 'translateY(30%)',
-              transformTo: 'translateY(0%)',
-              timing: {
-                delay: 200,
-                duration: 500
+            ],
+            exit: [
+              {
+                name: 'fade-out-animation',
+                node: this,
+                timing: {
+                  delay: 0,
+                  duration: 300
+                }
+              },
+              {
+                name: 'transform-animation',
+                node: this.$.transformedContent,
+                transformOrigin: '100%',
+                transformFrom: 'translateY(0%)',
+                transformTo: 'translateY(30%)',
+                timing: {
+                  delay: 0,
+                  duration: 200
+                }
               }
-            }],
-            exit: [{
-              name: 'fade-out-animation',
-              node: this,
-              timing: {
-                delay: 0,
-                duration: 300
-              }
-            }, {
-              name: 'transform-animation',
-              node: this.$.transformedContent,
-              transformOrigin: '100%',
-              transformFrom: 'translateY(0%)',
-              transformTo: 'translateY(30%)',
-              timing: {
-                delay: 0,
-                duration: 200
-              }
-            }]
+            ]
           };
         }
       }
