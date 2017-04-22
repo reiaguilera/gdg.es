@@ -5,10 +5,7 @@
   "author": "Abdón Rodríguez Davila <a@abdonrd.com> (https://abdonrd.com)",
   "homepage": "https://gdg.es",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/GDGSpain/gdg.es.git"
-  },
+  "repository": "GDGSpain/gdg.es",
   "bugs": {
     "url": "https://github.com/GDGSpain/gdg.es/issues"
   },
