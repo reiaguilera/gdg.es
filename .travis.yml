@@ -1,12 +1,9 @@
 language: node_js
-sudo: required
 dist: trusty
+sudo: false
 node_js:
-  - '6'
-cache:
-  yarn: true
-  directories:
-    - node_modules
+  - "6"
+cache: yarn
 branches:
   except:
     - /^v\d/
@@ -20,10 +17,10 @@ script:
   - yarn run test:integration
 before_deploy:
   - >
-    if [ $TRAVIS_BRANCH == 'master' ]; then
-      yarn run build:production;
-    elif [ $TRAVIS_BRANCH == 'develop' ]; then
+    if [ "${TRAVIS_BRANCH}" = "develop" ]; then
       yarn run build;
+    elif [ "${TRAVIS_BRANCH}" = "master" ]; then
+      yarn run build:production;
     fi
 deploy:
   - provider: firebase
