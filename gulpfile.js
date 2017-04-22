@@ -4,6 +4,7 @@
  * This code may only be used under the MIT style license found at http://gdg.es/LICENSE.txt
  */
 
+/* eslint-env es6, node */
 /* eslint-disable no-console */
 
 'use strict';
@@ -47,7 +48,7 @@ function waitFor(stream) {
 }
 
 function build() {
-  return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+  return new Promise((resolve) => {
     // Let's create some inline code splitters.
     let sourcesStreamSplitter = new polymerBuild.HtmlSplitter();
     let dependenciesStreamSplitter = new polymerBuild.HtmlSplitter();
@@ -76,12 +77,12 @@ function build() {
           .pipe(gulpif(production, replace(
             settings.authDomain.develop,
             settings.authDomain.production,
-            {skipBinary: true}
+            { skipBinary: true }
           )))
           .pipe(gulpif(production, replace(
             settings.databaseUrl.develop,
             settings.databaseUrl.production,
-            {skipBinary: true}
+            { skipBinary: true }
           )))
 
           // Rejoin your source files.
@@ -112,6 +113,7 @@ function build() {
       })
       .then(() => {
         console.log('Generating the Service Worker...');
+
         return polymerBuild.addServiceWorker({
           project: polymerProject,
           buildRoot: buildDirectory,

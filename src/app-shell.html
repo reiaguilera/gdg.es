@@ -72,7 +72,7 @@ page-groups.html and page-events.html -->
       .main-menu {
         --paper-tabs-selection-bar-color: var(--gdg-color-blue);
 
-        width: 425px;
+        width: 335px;
         height: 100%;
       }
 
@@ -182,9 +182,9 @@ page-groups.html and page-events.html -->
               <paper-tab name="groups" link tabindex="-1">
                 <a href="/groups">Grupos</a>
               </paper-tab>
-              <paper-tab name="events" link tabindex="-1">
+              <!--<paper-tab name="events" link tabindex="-1">
                 <a href="/events">Eventos</a>
-              </paper-tab>
+              </paper-tab>-->
               <paper-tab name="blog" link tabindex="-1">
                 <a href="http://blog.gdg.es" target="_blank">Blog</a>
               </paper-tab>
@@ -203,7 +203,7 @@ page-groups.html and page-events.html -->
           fallback-selection="404">
         <page-home name="home"></page-home>
         <page-groups name="groups"></page-groups>
-        <page-events name="events"></page-events>
+        <!--<page-events name="events"></page-events>-->
         <page-branding name="branding"></page-branding>
         <page-404 name="404"></page-404>
       </neon-animated-pages>
@@ -220,7 +220,7 @@ page-groups.html and page-events.html -->
               role="navigation">
             <a name="home" href="/">Inicio</a>
             <a name="groups" href="/groups">Grupos</a>
-            <a name="events" href="/events">Eventos</a>
+            <!--<a name="events" href="/events">Eventos</a>-->
             <a name="blog" href="http://blog.gdg.es">Blog</a>
             <a name="branding" href="/branding">Branding</a>
           </iron-selector>
@@ -257,14 +257,16 @@ page-groups.html and page-events.html -->
       _routePageChanged: function(pageName) {
         this.selectedPage = pageName || this.defaultSelectedPage;
 
-        // Scroll to the top of the page on every *route* change. Use `Polymer.AppLayout.scroll`
-        // with `behavior: 'silent'` to disable header scroll effects during the scroll.
+        // Scroll to the top of the page on every route change.
+        // Use `Polymer.AppLayout.scroll` with `behavior: 'silent'` to disable
+        // header scroll effects during the scroll
         Polymer.AppLayout.scroll({
           top: 0,
           behavior: 'silent'
         });
 
-        // Close the drawer - in case the route change came from a link in the drawer.
+        // Close the drawer - in case the route change came from a link in the
+        // drawer
         this.drawerOpened = false;
       },
 
