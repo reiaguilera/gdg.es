@@ -20,7 +20,7 @@ const polymerBuild = require('polymer-build');
 const replace = require('gulp-replace');
 const uglify = require('gulp-uglify');
 
-const production = process.env.NODE_ENV === 'production';
+const environment = process.env.NODE_ENV || 'development';
 const swPrecacheConfig = require('./sw-precache-config.js');
 const polymerJson = require('./polymer.json');
 const polymerProject = new polymerBuild.PolymerProject(polymerJson);
@@ -74,12 +74,12 @@ function build() {
           .pipe(gulpif(/\.json$/, jsonmin()))
 
           // Let's do the some changes for production
-          .pipe(gulpif(production, replace(
+          .pipe(gulpif(environment === 'production', replace(
             settings.authDomain.develop,
             settings.authDomain.production,
             { skipBinary: true }
           )))
-          .pipe(gulpif(production, replace(
+          .pipe(gulpif(environment === 'production', replace(
             settings.databaseUrl.develop,
             settings.databaseUrl.production,
             { skipBinary: true }
