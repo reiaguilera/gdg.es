@@ -76,4 +76,4 @@ Here are the steps to contribute to the project:
 3. Create a branch in your repo with the id of the issue (we recomend call the brach like fix/123-issue-name)
 4. Make a pull request to branch master
 
-And Remember Make sure your fork is up to date [Syncing a fork] (https://help.github.com/articles/syncing-a-fork/)
+**And Remember** Make sure your fork is up to date [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
