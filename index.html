@@ -13,10 +13,12 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <title>GDG Spain - Google Developer Groups Spain</title>
     <meta name="description" content="Organización que agrupa a todos los Google Developer Groups de España.">
 
-    <link rel="icon" href="/images/favicon.ico">
+    <base href="/">
+
+    <link rel="icon" href="images/favicon.ico">
 
     <!-- See https://goo.gl/OOhYW5 -->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
 
     <!-- See https://goo.gl/qRE0vM -->
     <meta name="theme-color" content="#4285f4">
@@ -31,14 +33,14 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Homescreen icons -->
-    <link rel="apple-touch-icon" href="/images/manifest/icon-48x48.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/manifest/icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="96x96" href="/images/manifest/icon-96x96.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/manifest/icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/images/manifest/icon-192x192.png">
+    <link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/manifest/icon-192x192.png">
 
     <!-- Tile icon for Windows 8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="/images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
     <meta name="msapplication-TileColor" content="#4285f4">
     <meta name="msapplication-tap-highlight" content="no">
 
@@ -67,6 +69,8 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         lazyRegister: true
       };
 
+      window.Polymer.rootPath = '/';
+
       // Load the webcomponentsjs polyfill if browser does not support native
       // Web Components
       (function() {
@@ -92,7 +96,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
         if (!webComponentsSupported) {
           var script = document.createElement('script');
           script.async = true;
-          script.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
+          script.src = 'bower_components/webcomponentsjs/webcomponents-lite.min.js';
           script.onload = onload;
           document.head.appendChild(script);
         } else {
@@ -103,12 +107,14 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
       // Load pre-caching Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js');
+          navigator.serviceWorker.register('service-worker.js', {
+            scope: Polymer.rootPath
+          });
         });
       }
     </script>
 
-    <link rel="import" href="/src/app-shell.html">
+    <link rel="import" href="src/app-shell.html">
 
     <style>
       body {

@@ -2,7 +2,7 @@
   "name": "GDG Spain",
   "short_name": "GDG Spain",
   "description": "Organización que agrupa a todos los Google Developer Groups de España.",
-  "start_url": "/?homescreen=1",
+  "start_url": "./?utm_source=homescreen",
   "display": "standalone",
   "theme_color": "#4285f4",
   "background_color": "#f4f4f4",
