@@ -138,7 +138,7 @@ This code may only be used under the MIT style license found at http://gdg.es/LI
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
     <app-route
         route="{{route}}"
-        pattern="/:pageName"
+        pattern="[[rootPath]]:pageName"
         data="{{routeData}}"></app-route>
 
     <iron-media-query
