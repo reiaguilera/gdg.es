@@ -57,7 +57,7 @@ against the browsers currently installed on your machine:
 
     polymer test
 
-### Adding a new view
+## Adding a new view
 
 You can extend the app by adding more views that will be demand-loaded
 e.g. based on the route, or to progressively render non-critical sections of the
@@ -67,13 +67,6 @@ components and their dependencies are added to the list of pre-cached components
 and will be included in the `bundled` build.
 
 
-### How to contribute
+## How to contribute
 
-Here are the steps to contribute to the project:
-
-1. Choose an unassigned issue or create new one.
-2. Fork the repo
-3. Create a branch in your repo with the id of the issue (we recomend call the brach like fix/123-issue-name)
-4. Make a pull request to branch master
-
-**And Remember** Make sure your fork is up to date [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
+The GDG Spain team loves contributions from the community! Take a look at our [contributing guide](CONTRIBUTING.md) for more information on how to contribute.
