@@ -15,8 +15,7 @@
     "bower.json"
   ],
   "extraDependencies": [
-    "bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror-worker.js",
-    "bower_components/app-storage/app-indexeddb-mirror/common-worker-scope.js",
+    "bower_components/app-storage/app-indexeddb-mirror/*.js",
     "bower_components/webcomponentsjs/webcomponents-lite.min.js",
     "LICENSE.txt",
     "manifest.json"
